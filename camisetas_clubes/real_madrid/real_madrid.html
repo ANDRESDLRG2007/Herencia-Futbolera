@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Camisetas del Real Madrid</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/camisetas_clubes/modal.css">
+  <link rel="stylesheet" href="./real_madrid.css">
+  <style>html { scroll-behavior: smooth; }</style>
+</head>
+<body class="real_madrid">
+  <a href="/clubes.html" class="back-btn">← Volver a clubes</a>
+  <header>
+    <h1>Camisetas Históricas — Real Madrid</h1>
+  </header>
+  <nav class="timeline-bar" aria-label="Timeline de temporadas">
+    <div class="timeline-inner">
+      <!-- Ejemplo de punto, edita según tus temporadas -->
+      <a class="timeline-item" href="#rm2000">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">2000-01</span>
+      </a>
+      <a class="timeline-item" href="#rm2010">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">2010-11</span>
+      </a>
+    </div>
+  </nav>
+  <main class="timeline">
+    <!-- Ejemplo de sección, edita según tus datos -->
+    <section id="rm2000" class="year-section" aria-labelledby="h2000">
+      <h2 id="h2000">2000-01</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item">
+          <img data-key="rm2000_home" src="./camisetas_rm/2000.jpg" alt="Real Madrid 2000 - Local" />
+          <figcaption>Local</figcaption>
+        </figure>
+        <figure class="jersey-item">
+          <img data-key="rm2000_away" src="./camisetas_rm/2000-visitante.jpg" alt="Real Madrid 2000 - Visitante" />
+          <figcaption>Visitante</figcaption>
+        </figure>
+        <figure class="jersey-item">
+          <img data-key="rm2000_keeper" src="./camisetas_rm/2000-portero.jpg" alt="Real Madrid 2000 - Portero" />
+          <figcaption>Portero</figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- Más secciones aquí -->
+  </main>
+  <!-- MODAL -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document" tabindex="-1">
+      <button class="cerrar" aria-label="Cerrar" id="modalClose">&times;</button>
+      <div id="modal-info" class="modal-info"></div>
+    </div>
+  </div>
+  <footer>
+    <p>Real Madrid — Historia de camisetas</p>
+  </footer>
+  <script src="real_madrid.js"></script>
+</body>
+</html>

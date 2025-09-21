@@ -1,10 +1,24 @@
-/* Botón volver a clubes */
- .back-btn {
+
+/* === Estilos exclusivos para Boca Juniors === */
+body.boca {
+  background-color: #F2F2F2;
+  color: #2E3559;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.boca h1 {
+  color: #2E3559;
+  font-size: 2rem;
+  margin: 20px 0;
+  text-align: center;
+}
+.back-btn {
   display: inline-block;
   margin: 24px 0 0 32px;
   padding: 8px 22px 8px 16px;
-  background: #A50044;
-  color: #fff;
+  background: #2E3559;
+  color: #F2F2F2;
   font-size: 1.08rem;
   font-weight: 600;
   border-radius: 24px;
@@ -16,34 +30,9 @@
   position: relative;
 }
 .back-btn:hover, .back-btn:focus {
-  background: #004D98;
-  color: #FFED02;
+  background: #212640;
+  color: #D9B23D;
   box-shadow: 0 4px 16px #0002;
-}
-/* === Estilos exclusivos para FC Barcelona === */
-
-body.barcelona {
-  background-color: #F2F2F2;
-  color: #004D98;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Título */
-.barcelona h1 {
-  color: #A50044;
-  font-size: 2rem;
-  margin: 20px 0;
-  text-align: center;
-}
-
-/* TIMELINE SUPERIOR: línea que atraviesa y puntos superpuestos */
-.timeline-bar {
-  position: relative;
-  padding: 18px 10px;
-  overflow-x: auto;
-  background: transparent;
 }
 
 /* línea principal (barra) */
@@ -65,7 +54,7 @@ body.barcelona {
   right: 0;
   top: 32px; /* justo debajo del centro de los puntos */
   height: 4px;
-  background: #3A3959; /* color barra */
+  background: #2E3559; /* color barra */
   z-index: 1;
   border-radius: 2px;
   transform: none;
@@ -89,8 +78,8 @@ body.barcelona {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #F2BD1D;
-  border: 2px solid #3A3959;
+  background: #D9B23D;
+  border: 2px solid #212640;
   box-shadow: 0 2px 6px rgba(0,0,0,0.16);
   transition: transform .15s ease, background .15s;
   position: relative;
@@ -108,7 +97,7 @@ body.barcelona {
 .timeline-bar .timeline-item:hover .dot,
 .timeline-bar .timeline-item:focus .dot {
   transform: scale(1.25);
-  background: #A50044;
+  background: #D9A441;
 }
 
 /* --- timeline: responsive - scroll horiz si hay muchos años --- */
@@ -136,19 +125,19 @@ body.barcelona {
 
 
 .year-section h2 {
-  color: #A50044;
+  color: #D9A441;
   font-size: 1.25rem;
   margin: 2px 0 12px;
   font-weight: 700;
 }
 
 .year-section {
-  border-top: 3px solid #222;
+  border-top: 3px solid #212640;
   margin-bottom: 40px;
   padding-top: 20px;
 }
 .year-section h2 {
-  color: #A50044;
+  color: #D9A441;
   font-size: 1.5rem;
   margin-bottom: 15px;
   text-align: left;
@@ -170,8 +159,8 @@ body.barcelona {
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
-  border: 3px solid #004D98;
-  background: #fff;
+  border: 3px solid #2E3559;
+  background: #F2F2F2;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   margin-bottom: 8px;
 }
@@ -186,7 +175,7 @@ body.barcelona {
 }
 
 .jersey-item img:hover {
-  border-color: #F2BD1D;
+  border-color: #D9B23D;
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
@@ -194,8 +183,8 @@ body.barcelona {
 /* Footer */
 footer.barcelona-footer {
   text-align: center;
-  background-color: #ffffff;
-  color: #3695d9;
+  background-color: #F2F2F2;
+  color: #2E3559;
   padding: 15px;
   font-size: 0.9rem;
   margin-top: 30px;

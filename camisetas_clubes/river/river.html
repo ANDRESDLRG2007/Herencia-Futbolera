@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Camisetas de River Plate</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="/camisetas_clubes/modal.css">
+  <link rel="stylesheet" href="./river.css">
+  <style>html { scroll-behavior: smooth; }</style>
+</head>
+<body class="river">
+  <a href="/clubes.html" class="back-btn">← Volver a clubes</a>
+  <header>
+    <h1>Camisetas Históricas — River Plate</h1>
+  </header>
+  <nav class="timeline-bar" aria-label="Timeline de temporadas">
+    <div class="timeline-inner">
+      <a class="timeline-item" href="#river2000">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">2000-01</span>
+      </a>
+      <a class="timeline-item" href="#river2010">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">2010-11</span>
+      </a>
+    </div>
+  </nav>
+  <main class="timeline">
+    <section id="river2000" class="year-section" aria-labelledby="h2000">
+      <h2 id="h2000">2000-01</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item">
+          <img data-key="river2000_home" src="./camisetas_river/2000.jpg" alt="River 2000 - Local" />
+          <figcaption>Local</figcaption>
+        </figure>
+        <figure class="jersey-item">
+          <img data-key="river2000_away" src="./camisetas_river/2000-visitante.jpg" alt="River 2000 - Visitante" />
+          <figcaption>Visitante</figcaption>
+        </figure>
+        <figure class="jersey-item">
+          <img data-key="river2000_keeper" src="./camisetas_river/2000-portero.jpg" alt="River 2000 - Portero" />
+          <figcaption>Portero</figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- Más secciones aquí -->
+  </main>
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document" tabindex="-1">
+      <button class="cerrar" aria-label="Cerrar" id="modalClose">&times;</button>
+      <div id="modal-info" class="modal-info"></div>
+    </div>
+  </div>
+  <footer>
+    <p>River Plate — Historia de camisetas</p>
+  </footer>
+  <script src="river.js"></script>
+</body>
+</html>

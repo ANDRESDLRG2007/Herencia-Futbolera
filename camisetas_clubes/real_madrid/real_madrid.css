@@ -1,10 +1,17 @@
-/* Botón volver a clubes */
- .back-btn {
+/* === Estilos exclusivos para Real Madrid === */
+body.realmadrid {
+  background-color: #F2F2F2;
+  color: #1C1D22;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.back-btn {
   display: inline-block;
   margin: 24px 0 0 32px;
   padding: 8px 22px 8px 16px;
-  background: #A50044;
-  color: #fff;
+  background: #D9AA52;
+  color: #1C1D22;
   font-size: 1.08rem;
   font-weight: 600;
   border-radius: 24px;
@@ -16,37 +23,23 @@
   position: relative;
 }
 .back-btn:hover, .back-btn:focus {
-  background: #004D98;
-  color: #FFED02;
+  background: #D9AA52;
+  color: #F2F2F2;
   box-shadow: 0 4px 16px #0002;
 }
-/* === Estilos exclusivos para FC Barcelona === */
-
-body.barcelona {
-  background-color: #F2F2F2;
-  color: #004D98;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Título */
-.barcelona h1 {
-  color: #A50044;
+.realmadrid h1 {
+  color: #D9AA52;
   font-size: 2rem;
   margin: 20px 0;
   text-align: center;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
-
-/* TIMELINE SUPERIOR: línea que atraviesa y puntos superpuestos */
 .timeline-bar {
   position: relative;
   padding: 18px 10px;
   overflow-x: auto;
   background: transparent;
 }
-
-/* línea principal (barra) */
 .timeline-bar .timeline-inner {
   position: relative;
   display: flex;
@@ -56,76 +49,63 @@ body.barcelona {
   padding: 24px 40px 0 40px;
   min-width: 420px;
 }
-
-/* linea horizontal central (dentro del contenedor) */
 .timeline-bar .timeline-inner::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 32px; /* justo debajo del centro de los puntos */
+  top: 32px;
   height: 4px;
-  background: #3A3959; /* color barra */
+  background: #3E424E;
   z-index: 1;
   border-radius: 2px;
-  transform: none;
 }
-
-/* cada item del timeline */
 .timeline-bar .timeline-item {
   position: relative;
-  z-index: 2; /* sobre la línea */
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  color: #222;
+  color: #1C1D22;
   min-width: 64px;
 }
-
-/* el punto que se superpone */
 .timeline-bar .dot {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #F2BD1D;
-  border: 2px solid #3A3959;
+  background: #D9AA52;
+  border: 2px solid #3E424E;
   box-shadow: 0 2px 6px rgba(0,0,0,0.16);
   transition: transform .15s ease, background .15s;
   position: relative;
   z-index: 2;
 }
-
-/* etiqueta debajo del punto */
 .timeline-bar .label {
   font-size: 0.85rem;
-  color: #222;
+  color: #1C1D22;
   font-weight: 700;
 }
-
-/* hover y focus accesible */
 .timeline-bar .timeline-item:hover .dot,
 .timeline-bar .timeline-item:focus .dot {
   transform: scale(1.25);
-  background: #A50044;
+  background: #D9AA52;
 }
-
-/* --- timeline: responsive - scroll horiz si hay muchos años --- */
 @media (max-width: 680px) {
   .timeline-bar .timeline-inner { padding: 8px; gap: 22px; }
   .timeline-bar .label { font-size: 0.8rem; }
 }
-
-/* --- Main timeline content (secciones por año) --- */
 .timeline {
   max-width: 920px;
   margin: 18px auto 40px;
   padding: 0 16px;
 }
-
-
-
+.year-section {
+  border-top: 3px solid #D7D7D9;
+  padding-top: 20px;
+  margin-bottom: 36px;
+}
 .jersey-row {
   display: flex;
   flex-direction: row;
@@ -133,27 +113,12 @@ body.barcelona {
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
-
-
 .year-section h2 {
-  color: #A50044;
-  font-size: 1.25rem;
-  margin: 2px 0 12px;
-  font-weight: 700;
-}
-
-.year-section {
-  border-top: 3px solid #222;
-  margin-bottom: 40px;
-  padding-top: 20px;
-}
-.year-section h2 {
-  color: #A50044;
+  color: #D9AA52;
   font-size: 1.5rem;
   margin-bottom: 15px;
   text-align: left;
 }
-
 .jersey-item {
   display: flex;
   flex-direction: column;
@@ -162,40 +127,34 @@ body.barcelona {
   min-width: 200px;
   max-width: 220px;
 }
-
-/* Camisetas uniformes */
 .jersey-item img {
   width: 200px;
   height: 250px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
-  border: 3px solid #004D98;
-  background: #fff;
+  border: 3px solid #3E424E;
+  background: #F2F2F2;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   margin-bottom: 8px;
 }
-
 .jersey-item figcaption {
   font-size: 1rem;
   font-weight: 600;
-  color: #2d2d2d;
+  color: #0D0D0D;
   margin-bottom: 4px;
   margin-top: 0;
   text-align: center;
 }
-
 .jersey-item img:hover {
-  border-color: #F2BD1D;
+  border-color: #D9AA52;
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
-
-/* Footer */
-footer.barcelona-footer {
+.realmadrid footer {
   text-align: center;
-  background-color: #ffffff;
-  color: #3695d9;
+  background-color: #3E424E;
+  color: #D9AA52;
   padding: 15px;
   font-size: 0.9rem;
   margin-top: 30px;
