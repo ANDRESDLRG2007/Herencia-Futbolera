@@ -8,9 +8,9 @@ const camisetas = [
   { equipo: "Barcelona", temporada: "2015", img: "/camisetas_clubes/barcelona/camisetas_barca/2015.jpg" },
   { equipo: "Barcelona", temporada: "2021", img: "/camisetas_clubes/barcelona/camisetas_barca/2021.jpg" },
   // Real Madrid
-  { equipo: "Real Madrid", temporada: "2006", img: "/camisetas_clubes/real_madrid/camisetas_rm/2006.jpg" },
-  { equipo: "Real Madrid", temporada: "2010", img: "/camisetas_clubes/real_madrid/camisetas_rm/2010.jpg" },
-  { equipo: "Real Madrid", temporada: "2015", img: "/camisetas_clubes/real_madrid/camisetas_rm/2015.jpg" },
+  { equipo: "Real Madrid", temporada: "2009", img: "/camisetas_clubes/real_madrid/camisetas_rm/2009.jpg" },
+  { equipo: "Real Madrid", temporada: "2017", img: "/camisetas_clubes/real_madrid/camisetas_rm/2017.jpg" },
+  { equipo: "Real Madrid", temporada: "2014", img: "/camisetas_clubes/real_madrid/camisetas_rm/2014.jpg" },
   { equipo: "Real Madrid", temporada: "2021", img: "/camisetas_clubes/real_madrid/camisetas_rm/2021.jpg" },
   // Boca Juniors
   { equipo: "Boca Juniors", temporada: "1997", img: "/camisetas_clubes/boca/camisetas_boca/1997.jpg" },
@@ -23,14 +23,15 @@ const camisetas = [
   { equipo: "River Plate", temporada: "2014", img: "/camisetas_clubes/river/camisetas_river/2014.jpg" },
   { equipo: "River Plate", temporada: "2018", img: "/camisetas_clubes/river/camisetas_river/2018.jpg" },
   // Milan
-  { equipo: "AC Milan", temporada: "2007", img: "/camisetas_clubes/milan/camisetas_milan/2007.jpg" },
+  { equipo: "AC Milan", temporada: "2006", img: "/camisetas_clubes/milan/camisetas_milan/2006.jpg" },
+  { equipo: "AC Milan", temporada: "2009", img: "/camisetas_clubes/milan/camisetas_milan/2009.jpg" },
   { equipo: "AC Milan", temporada: "2011", img: "/camisetas_clubes/milan/camisetas_milan/2011.jpg" },
   { equipo: "AC Milan", temporada: "2015", img: "/camisetas_clubes/milan/camisetas_milan/2015.jpg" },
-  { equipo: "AC Milan", temporada: "2020", img: "/camisetas_clubes/milan/camisetas_milan/2020.jpg" },
   // Millonarios (ejemplo)
-  { equipo: "Millonarios", temporada: "2012", img: "/camisetas_clubes/millonarios/camisetas_millos/2012.jpg" },
-  { equipo: "Millonarios", temporada: "2017", img: "/camisetas_clubes/millonarios/camisetas_millos/2017.jpg" },
-  { equipo: "Millonarios", temporada: "2021", img: "/camisetas_clubes/millonarios/camisetas_millos/2021.jpg" }
+  { equipo: "Millonarios", temporada: "2007", img: "/camisetas_clubes/millonarios/camisetas_millos/2007.jpg" },
+  { equipo: "Millonarios", temporada: "2010", img: "/camisetas_clubes/millonarios/camisetas_millos/2010.jpg" },
+  { equipo: "Millonarios", temporada: "2014", img: "/camisetas_clubes/millonarios/camisetas_millos/2014.jpg" },
+  { equipo: "Millonarios", temporada: "2017", img: "/camisetas_clubes/millonarios/camisetas_millos/2017.jpg" }
 ];
 
 
@@ -39,6 +40,7 @@ let camisetaActual = null;
 let ultimoClub = null;
 let camisetasShuffled = [];
 let idxCamiseta = 0;
+let racha = 0;
 
 //const dificultadSelect = document.getElementById('dificultad');
 const camisetaDiv = document.getElementById('juego-camiseta');
@@ -102,37 +104,37 @@ function renderInputs() {
 form.addEventListener('submit', e => {
   e.preventDefault();
   let correcto = false;
-    if (typeof window.vidas === 'undefined') window.vidas = 3;
-    if (typeof window.bloqueo === 'undefined') window.bloqueo = false;
-    if (window.bloqueo) return;
-    if (dificultad === 'facil') {
-      const paises = {
-        'Barcelona': 'España',
-        'Real Madrid': 'España',
-        'AC Milan': 'Italia',
-        'Boca Juniors': 'Argentina',
-        'River Plate': 'Argentina',
-        'Millonarios': 'Colombia'
-      };
-      const pais = form.pais.value.trim().toLowerCase();
-      const paisCorrecto = paises[camisetaActual.equipo].toLowerCase();
-      correcto = pais === paisCorrecto;
+  if (typeof window.vidas === 'undefined') window.vidas = 3;
+  if (typeof window.bloqueo === 'undefined') window.bloqueo = false;
+  if (window.bloqueo) return;
+  if (dificultad === 'facil') {
+    const paises = {
+      'Barcelona': 'España',
+      'Real Madrid': 'España',
+      'AC Milan': 'Italia',
+      'Boca Juniors': 'Argentina',
+      'River Plate': 'Argentina',
+      'Millonarios': 'Colombia'
+    };
+    const pais = form.pais.value.trim().toLowerCase();
+    const paisCorrecto = paises[camisetaActual.equipo].toLowerCase();
+    correcto = pais === paisCorrecto;
     feedbackDiv.textContent = correcto ? '¡Correcto!' : `Incorrecto. Era: ${paises[camisetaActual.equipo]}`;
-    } else if (dificultad === 'dificil') {
-      const equipo = form.equipo.value.trim().toLowerCase();
-      const temporada = form.temporada.value.trim();
-      correcto = equipo === camisetaActual.equipo.toLowerCase() && temporada === camisetaActual.temporada;
+  } else if (dificultad === 'dificil') {
+    const equipo = form.equipo.value.trim().toLowerCase();
+    const temporada = form.temporada.value.trim();
+    correcto = equipo === camisetaActual.equipo.toLowerCase() && temporada === camisetaActual.temporada;
     feedbackDiv.textContent = correcto ? '¡Correcto!' : `Incorrecto. Era: ${camisetaActual.equipo}, ${camisetaActual.temporada}`;
-    }
-  let racha = 0;
+  }
   if (correcto) {
-    racha = (typeof racha === 'number' ? racha : 0) + 1;
+    racha++;
     window.vidas = 3;
     resetJuego();
     if (racha >= 5) {
       guardarPartidaHoy();
       window.bloqueo = true;
       mostrarVictoria();
+      racha = 0;
       return;
     }
     setTimeout(() => {
