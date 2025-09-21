@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camisetas del Barcelona</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="camisetas_clubes/modal.css">
+</head>
+<body>
+  <h1>Camisetas Históricas - FC Barcelona</h1>
+  <div class="jersey-grid">
+    <img src="img/barca2006.png" alt="Barcelona 2006" onclick="mostrarModal('barca2006')">
+    <img src="img/barca2010.png" alt="Barcelona 2010" onclick="mostrarModal('barca2010')">
+    <img src="img/barca2015.png" alt="Barcelona 2015" onclick="mostrarModal('barca2015')">
+    <img src="img/barca2021.png" alt="Barcelona 2021" onclick="mostrarModal('barca2021')">
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <div id="modal-info"></div>
+    </div>
+  </div>
+
+  <script src="barcelona.js"></script>
+</body>
+</html>
