@@ -14,47 +14,68 @@
   <header>
     <h1>Camisetas Históricas — Boca Juniors</h1>
   </header>
+
+  <!-- Timeline -->
   <nav class="timeline-bar" aria-label="Timeline de temporadas">
     <div class="timeline-inner">
-      <a class="timeline-item" href="#boca2000">
-        <span class="dot" aria-hidden="true"></span>
-        <span class="label">2000-01</span>
-      </a>
-      <a class="timeline-item" href="#boca2010">
-        <span class="dot" aria-hidden="true"></span>
-        <span class="label">2010-11</span>
-      </a>
+      <a class="timeline-item" href="#boca9798"><span class="dot"></span><span class="label">1997-98</span></a>
+      <a class="timeline-item" href="#boca0203"><span class="dot"></span><span class="label">2002-03</span></a>
+      <a class="timeline-item" href="#boca1415"><span class="dot"></span><span class="label">2014-15</span></a>
+      <a class="timeline-item" href="#boca2021"><span class="dot"></span><span class="label">2020-21</span></a>
     </div>
   </nav>
+
   <main class="timeline">
-    <section id="boca2000" class="year-section" aria-labelledby="h2000">
-      <h2 id="h2000">2000-01</h2>
+    <!-- 1997-98 -->
+    <section id="boca9798" class="year-section">
+      <h2>1997-98</h2>
       <div class="jersey-row">
-        <figure class="jersey-item">
-          <img data-key="boca2000_home" src="./camisetas_boca/2000.jpg" alt="Boca 2000 - Local" />
-          <figcaption>Local</figcaption>
-        </figure>
-        <figure class="jersey-item">
-          <img data-key="boca2000_away" src="./camisetas_boca/2000-visitante.jpg" alt="Boca 2000 - Visitante" />
-          <figcaption>Visitante</figcaption>
-        </figure>
-        <figure class="jersey-item">
-          <img data-key="boca2000_keeper" src="./camisetas_boca/2000-portero.jpg" alt="Boca 2000 - Portero" />
-          <figcaption>Portero</figcaption>
-        </figure>
+        <figure class="jersey-item"><img data-key="boca9798_home" src="./camisetas_boca/1997.jpg" alt="Boca 97-98 Local" /><figcaption>Local</figcaption></figure>
+        <figure class="jersey-item"><img data-key="boca9798_away" src="./camisetas_boca/1997 - visitante.jpg" alt="Boca 97-98 Visitante" /><figcaption>Visitante</figcaption></figure>
+        <figure class="jersey-item"><img data-key="boca9798_keeper" src="./camisetas_boca/1997 - portero.jpg" alt="Boca 97-98 Portero" /><figcaption>Portero</figcaption></figure>
       </div>
     </section>
-    <!-- Más secciones aquí -->
+
+    <!-- 2002-03 -->
+    <section id="boca0203" class="year-section">
+      <h2>2002-03</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item"><img data-key="boca0203_home" src="./camisetas_boca/2003.jpg" alt="Boca 02-03 Local" /><figcaption>Local</figcaption></figure>
+        <figure class="jersey-item"><img data-key="boca0203_away" src="./camisetas_boca/2003 - visitante.jpg" alt="Boca 02-03 Visitante" /><figcaption>Visitante</figcaption></figure>
+        <figure class="jersey-item"><img data-key="boca0203_keeper" src="./camisetas_boca/2003 - portero.jpg" alt="Boca 02-03 Portero" /><figcaption>Portero</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 2014-15 -->
+    <section id="boca1415" class="year-section">
+      <h2>2014-15</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item"><img data-key="boca1415_home" src="./camisetas_boca/2014.jpg" alt="Boca 14-15 Local" /><figcaption>Local</figcaption></figure>
+        <figure class="jersey-item"><img data-key="boca1415_away" src="./camisetas_boca/2014 - visitante.jpg" alt="Boca 14-15 Visitante" /><figcaption>Visitante</figcaption></figure>
+        <figure class="jersey-item"><img data-key="boca1415_keeper" src="./camisetas_boca/2014 - portero.jpg" alt="Boca 14-15 Portero" /><figcaption>Portero</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 2020-21 -->
+    <section id="boca2021" class="year-section">
+      <h2>2020-21</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item"><img data-key="boca2021_home" src="./camisetas_boca/2020.jpg" alt="Boca 20-21 Local" /><figcaption>Local</figcaption></figure>
+        <figure class="jersey-item"><img data-key="boca2021_away" src="./camisetas_boca/2020 - visitante.jpg" alt="Boca 20-21 Visitante" /><figcaption>Visitante</figcaption></figure>
+        <figure class="jersey-item"><img data-key="boca2021_keeper" src="./camisetas_boca/2020 - portero.jpg" alt="Boca 20-21 Portero" /><figcaption>Portero</figcaption></figure>
+      </div>
+    </section>
   </main>
-  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
     <div class="modal-content" role="document" tabindex="-1">
-      <button class="cerrar" aria-label="Cerrar" id="modalClose">&times;</button>
-      <div id="modal-info" class="modal-info"></div>
+      <button class="cerrar" id="modalClose">&times;</button>
+      <div id="modal-info"></div>
     </div>
   </div>
-  <footer>
-    <p>Boca Juniors — Historia de camisetas</p>
-  </footer>
+
+  <footer><p>Boca Juniors — Historia de camisetas</p></footer>
   <script src="boca.js"></script>
 </body>
 </html>
