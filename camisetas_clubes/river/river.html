@@ -14,47 +14,68 @@
   <header>
     <h1>Camisetas Históricas — River Plate</h1>
   </header>
+
+  <!-- Timeline -->
   <nav class="timeline-bar" aria-label="Timeline de temporadas">
     <div class="timeline-inner">
-      <a class="timeline-item" href="#river2000">
-        <span class="dot" aria-hidden="true"></span>
-        <span class="label">2000-01</span>
-      </a>
-      <a class="timeline-item" href="#river2010">
-        <span class="dot" aria-hidden="true"></span>
-        <span class="label">2010-11</span>
-      </a>
+      <a class="timeline-item" href="#river0102"><span class="dot"></span><span class="label">2001-02</span></a>
+      <a class="timeline-item" href="#river0809"><span class="dot"></span><span class="label">2008-09</span></a>
+      <a class="timeline-item" href="#river1415"><span class="dot"></span><span class="label">2014-15</span></a>
+      <a class="timeline-item" href="#river1819"><span class="dot"></span><span class="label">2018-19</span></a>
     </div>
   </nav>
+
   <main class="timeline">
-    <section id="river2000" class="year-section" aria-labelledby="h2000">
-      <h2 id="h2000">2000-01</h2>
+    <!-- 2001-02 -->
+    <section id="river0102" class="year-section">
+      <h2>2001-02</h2>
       <div class="jersey-row">
-        <figure class="jersey-item">
-          <img data-key="river2000_home" src="./camisetas_river/2000.jpg" alt="River 2000 - Local" />
-          <figcaption>Local</figcaption>
-        </figure>
-        <figure class="jersey-item">
-          <img data-key="river2000_away" src="./camisetas_river/2000-visitante.jpg" alt="River 2000 - Visitante" />
-          <figcaption>Visitante</figcaption>
-        </figure>
-        <figure class="jersey-item">
-          <img data-key="river2000_keeper" src="./camisetas_river/2000-portero.jpg" alt="River 2000 - Portero" />
-          <figcaption>Portero</figcaption>
-        </figure>
+        <figure class="jersey-item"><img data-key="river0102_home" src="./camisetas_river/2001.jpg" alt="River 01-02 Local" /><figcaption>Local</figcaption></figure>
+        <figure class="jersey-item"><img data-key="river0102_away" src="./camisetas_river/2001 - visitante.jpg" alt="River 01-02 Visitante" /><figcaption>Visitante</figcaption></figure>
+        <figure class="jersey-item"><img data-key="river0102_keeper" src="./camisetas_river/2001 - portero.jpg" alt="River 01-02 Portero" /><figcaption>Portero</figcaption></figure>
       </div>
     </section>
-    <!-- Más secciones aquí -->
+
+    <!-- 2008-09 -->
+    <section id="river0809" class="year-section">
+      <h2>2008-09</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item"><img data-key="river0809_home" src="./camisetas_river/2008.jpg" alt="River 08-09 Local" /><figcaption>Local</figcaption></figure>
+        <figure class="jersey-item"><img data-key="river0809_away" src="./camisetas_river/2008 - visitante.jpg" alt="River 08-09 Visitante" /><figcaption>Visitante</figcaption></figure>
+        <figure class="jersey-item"><img data-key="river0809_keeper" src="./camisetas_river/2008 - portero.jpg" alt="River 08-09 Portero" /><figcaption>Portero</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 2014-15 -->
+    <section id="river1415" class="year-section">
+      <h2>2014-15</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item"><img data-key="river1415_home" src="./camisetas_river/2014.jpg" alt="River 14-15 Local" /><figcaption>Local</figcaption></figure>
+        <figure class="jersey-item"><img data-key="river1415_away" src="./camisetas_river/2014 - visitante.jpg" alt="River 14-15 Visitante" /><figcaption>Visitante</figcaption></figure>
+        <figure class="jersey-item"><img data-key="river1415_keeper" src="./camisetas_river/2014 - portero.jpg" alt="River 14-15 Portero" /><figcaption>Portero</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 2018-19 -->
+    <section id="river1819" class="year-section">
+      <h2>2018-19</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item"><img data-key="river1819_home" src="./camisetas_river/2018.jpg" alt="River 18-19 Local" /><figcaption>Local</figcaption></figure>
+        <figure class="jersey-item"><img data-key="river1819_away" src="./camisetas_river/2018 - visitante.jpg" alt="River 18-19 Visitante" /><figcaption>Visitante</figcaption></figure>
+        <figure class="jersey-item"><img data-key="river1819_keeper" src="./camisetas_river/2018 - portero.jpg" alt="River 18-19 Portero" /><figcaption>Portero</figcaption></figure>
+      </div>
+    </section>
   </main>
-  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
     <div class="modal-content" role="document" tabindex="-1">
-      <button class="cerrar" aria-label="Cerrar" id="modalClose">&times;</button>
-      <div id="modal-info" class="modal-info"></div>
+      <button class="cerrar" id="modalClose">&times;</button>
+      <div id="modal-info"></div>
     </div>
   </div>
-  <footer>
-    <p>River Plate — Historia de camisetas</p>
-  </footer>
+
+  <footer><p>River Plate — Historia de camisetas</p></footer>
   <script src="river.js"></script>
 </body>
 </html>
