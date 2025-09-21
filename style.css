@@ -1,0 +1,79 @@
+/* === ESTILOS GENERALES === */
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #F2F2F2;
+  margin: 0;
+  padding: 0;
+  color: #222222;
+}
+
+/* Header principal */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #3A3959;
+  font-weight: 700;
+}
+
+/* === GRID DE CLUBES Y CAMISETAS === */
+.club-grid, 
+.jersey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Tarjetas de clubes/camisetas */
+.club-grid img, 
+.jersey-grid img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+/* Hover interactivo */
+.club-grid img:hover, 
+.jersey-grid img:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border: 2px solid #F2BD1D;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  background-color: #3A3959;
+  color: #F2F2F2;
+  padding: 15px;
+  font-size: 0.9rem;
+  margin-top: 30px;
+}
+
+/* === BOTONES GENERALES === */
+button, .btn {
+  background-color: #F2BD1D;
+  color: #222222;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+button:hover, .btn:hover {
+  background-color: #3A3959;
+  color: #F2F2F2;
+}

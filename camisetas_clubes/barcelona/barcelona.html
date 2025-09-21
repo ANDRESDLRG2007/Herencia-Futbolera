@@ -1,28 +1,154 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Camisetas del Barcelona</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="camisetas_clubes/modal.css">
-</head>
-<body>
-  <h1>Camisetas Históricas - FC Barcelona</h1>
-  <div class="jersey-grid">
-    <img src="img/barca2006.png" alt="Barcelona 2006" onclick="mostrarModal('barca2006')">
-    <img src="img/barca2010.png" alt="Barcelona 2010" onclick="mostrarModal('barca2010')">
-    <img src="img/barca2015.png" alt="Barcelona 2015" onclick="mostrarModal('barca2015')">
-    <img src="img/barca2021.png" alt="Barcelona 2021" onclick="mostrarModal('barca2021')">
-  </div>
 
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal()">&times;</span>
-      <div id="modal-info"></div>
+  <!-- estilos globales (tu style.css) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- modal universal -->
+  <link rel="stylesheet" href="/camisetas_clubes/modal.css">
+
+  <!-- estilos exclusivos Barça (timeline, tarjetas, etc.) -->
+  <link rel="stylesheet" href="./barcelona.css">
+
+  <style>
+    /* activamos scroll suave para anclas */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="barcelona">
+  <a href="/clubes.html" class="back-btn">← Volver a clubes</a>
+
+  <header>
+    <h1>Camisetas Históricas — FC Barcelona</h1>
+  </header>
+
+  <!-- TIMELINE SUPERIOR -->
+  <nav class="timeline-bar" aria-label="Timeline de temporadas">
+    <div class="timeline-inner">
+      <a class="timeline-item" href="#barca2006">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">2006-07</span>
+      </a>
+
+      <a class="timeline-item" href="#barca2010">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">2010-11</span>
+      </a>
+
+      <a class="timeline-item" href="#barca2015">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">2014-15</span>
+      </a>
+
+      <a class="timeline-item" href="#barca2021">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="label">2020-21</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO: timeline con secciones por año -->
+  <main class="timeline">
+    <!-- 2006 -->
+    <section id="barca2006" class="year-section" aria-labelledby="h2006">
+      <h2 id="h2006">2006-07</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item">
+          <img data-key="barca2006_home" src="./camisetas_barca/2006.jpg" alt="Barça 2006 - Local" />
+          <figcaption>Local</figcaption>
+        </figure>
+
+        <figure class="jersey-item">
+          <img data-key="barca2006_away" src="./camisetas_barca/2006-visitante.jpg" alt="Barça 2006 - Visitante" />
+          <figcaption>Visitante</figcaption>
+        </figure>
+
+        <figure class="jersey-item">
+          <img data-key="barca2006_keeper" src="./camisetas_barca/2006-portero.jpg" alt="Barça 2006 - Portero" />
+          <figcaption>Portero</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2010 -->
+    <section id="barca2010" class="year-section" aria-labelledby="h2010">
+      <h2 id="h2010">2010-11</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item">
+          <img data-key="barca2010_home" src="./camisetas_barca/2010.jpg" alt="Barça 2010 - Local" />
+          <figcaption>Local</figcaption>
+        </figure>
+
+        <figure class="jersey-item">
+          <img data-key="barca2010_away" src="./camisetas_barca/2010 - visitante.jpg" alt="Barça 2010 - Visitante" />
+          <figcaption>Visitante</figcaption>
+        </figure>
+
+        <figure class="jersey-item">
+          <img data-key="barca2010_keeper" src="./camisetas_barca/2010 - portero.jpg" alt="Barça 2010 - Portero" />
+          <figcaption>Portero</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2015 -->
+    <section id="barca2015" class="year-section" aria-labelledby="h2015">
+      <h2 id="h2015">2014-15</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item">
+          <img data-key="barca2015_home" src="./camisetas_barca/2015.jpg" alt="Barça 2015 - Local" />
+          <figcaption>Local</figcaption>
+        </figure>
+
+        <figure class="jersey-item">
+          <img data-key="barca2015_away" src="./camisetas_barca/2015 - visitante.jpg" alt="Barça 2015 - Visitante" />
+          <figcaption>Visitante</figcaption>
+        </figure>
+
+        <figure class="jersey-item">
+          <img data-key="barca2015_keeper" src="./camisetas_barca/2015 - portero.jpg" alt="Barça 2015 - Portero" />
+          <figcaption>Portero</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2021 -->
+    <section id="barca2021" class="year-section" aria-labelledby="h2021">
+      <h2 id="h2021">2020-21</h2>
+      <div class="jersey-row">
+        <figure class="jersey-item">
+          <img data-key="barca2021_home" src="./camisetas_barca/2021.jpg" alt="Barça 2021 - Local" />
+          <figcaption>Local</figcaption>
+        </figure>
+
+        <figure class="jersey-item">
+          <img data-key="barca2021_away" src="./camisetas_barca/2021 - visitante.jpg" alt="Barça 2021 - Visitante" />
+          <figcaption>Visitante</figcaption>
+        </figure>
+
+        <figure class="jersey-item">
+          <img data-key="barca2021_keeper" src="./camisetas_barca/2021 - portero.jpg" alt="Barça 2021 - Portero" />
+          <figcaption>Portero</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document" tabindex="-1">
+      <button class="cerrar" aria-label="Cerrar" id="modalClose">&times;</button>
+      <div id="modal-info" class="modal-info"></div>
     </div>
   </div>
+
+  <footer>
+    <p>FC Barcelona — Historia de camisetas</p>
+  </footer>
 
   <script src="barcelona.js"></script>
 </body>
