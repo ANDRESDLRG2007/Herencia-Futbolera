@@ -1,17 +1,17 @@
-/* === Estilos exclusivos para River Plate === */
-body.river {
-  background-color: #D9D9D9;
-  color: #8C031C;
+body.riverplate {
+  background-color: #F2F2F2;
+  color: #0A0A0A;
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
+
 .back-btn {
   display: inline-block;
   margin: 24px 0 0 32px;
   padding: 8px 22px 8px 16px;
-  background: #A60D36;
-  color: #D9D9D9;
+  background: #D50032; /* Rojo de River Plate */
+  color: #0A0A0A;
   font-size: 1.08rem;
   font-weight: 600;
   border-radius: 24px;
@@ -22,45 +22,52 @@ body.river {
   outline: none;
   position: relative;
 }
+
 .back-btn:hover, .back-btn:focus {
-  background: #590414;
-  color: #D9D9D9;
+  background: #C4002D; /* Color rojo más intenso */
+  color: #F2F2F2;
   box-shadow: 0 4px 16px #0002;
 }
-.realmadrid h1 {
-  color: #A60D36;
+
+.riverplate h1 {
+  color: #D50032; /* Rojo de River Plate */
   font-size: 2rem;
   margin: 20px 0;
   text-align: center;
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
+
+/* Timeline */
 .timeline-bar {
   position: relative;
   padding: 18px 10px;
   overflow-x: auto;
   background: transparent;
 }
+
 .timeline-bar .timeline-inner {
   position: relative;
   display: flex;
   gap: 36px;
   align-items: center;
   justify-content: center;
-  padding: 40px 40px 0 40px; /* Aumenta el padding-top para que los puntos queden sobre la línea */
+  padding: 40px 40px 0 40px;
   min-width: 320px;
 }
+
 .timeline-bar .timeline-inner::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%; /* Centra la línea verticalmente respecto a los puntos */
+  top: 50%;
   height: 4px;
-  background: #0D0D0D; /* Color institucional River */
+  background: #0A0A0A; /* Color oscuro de River Plate */
   z-index: 1;
   border-radius: 2px;
   transform: translateY(-50%);
 }
+
 .timeline-bar .timeline-item {
   position: relative;
   z-index: 2;
@@ -69,31 +76,35 @@ body.river {
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  color: #8C031C;
+  color: #0A0A0A;
   min-width: 64px;
 }
+
 .timeline-bar .dot {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #A60D36;
-  border: 2px solid #8C031C;
+  background: #D50032; /* Rojo de River Plate */
+  border: 2px solid #3E424E;
   box-shadow: 0 2px 6px rgba(0,0,0,0.16);
   transition: transform .15s ease, background .15s;
   position: relative;
   z-index: 2;
+  margin-bottom: 8px;
 }
+
 .timeline-bar .label {
   font-size: 0.85rem;
-  color: #8C031C;
+  color: #0A0A0A;
   font-weight: 700;
 }
+
 .timeline-bar .timeline-item:hover .dot,
 .timeline-bar .timeline-item:focus .dot {
   transform: scale(1.25);
-  background: #A60D36;
+  background: #D50032; /* Rojo de River Plate */
 }
-/* Responsive: menos padding y gap en móvil */
+
 @media (max-width: 680px) {
   .timeline-bar .timeline-inner {
     padding: 28px 4vw 0 4vw;
@@ -103,30 +114,41 @@ body.river {
   .timeline-bar .timeline-inner::before {
     height: 3px;
   }
+  .timeline-bar .dot {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 6px;
+  }
 }
+
 .timeline {
   max-width: 920px;
   margin: 18px auto 40px;
   padding: 0 16px;
 }
+
 .year-section {
-  border-top: 3px solid #D9D9D9;
+  border-top: 3px solid #D7D7D9;
   padding-top: 20px;
   margin-bottom: 36px;
 }
+
+.year-section h2 {
+  color: #D50032; /* Rojo de River Plate */
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center; /* centrado */
+}
+
 .jersey-row {
   display: flex;
   flex-direction: row;
   gap: 32px;
   flex-wrap: wrap;
   margin-bottom: 24px;
+  justify-content: center; /* centrado */
 }
-.year-section h2 {
-  color: #A60D36;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  text-align: left;
-}
+
 .jersey-item {
   display: flex;
   flex-direction: column;
@@ -134,18 +156,21 @@ body.river {
   justify-content: flex-start;
   min-width: 200px;
   max-width: 220px;
+  text-align: center; /* centrado */
 }
+
 .jersey-item img {
   width: 200px;
   height: 250px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
-  border: 3px solid #8C031C;
-  background: #D9D9D9;
+  border: 3px solid #3E424E;
+  background: #F2F2F2;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   margin-bottom: 8px;
 }
+
 .jersey-item figcaption {
   font-size: 1rem;
   font-weight: 600;
@@ -154,15 +179,17 @@ body.river {
   margin-top: 0;
   text-align: center;
 }
+
 .jersey-item img:hover {
-  border-color: #A60D36;
+  border-color: #D50032; /* Rojo de River Plate */
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
-.river footer {
+
+.riverplate footer {
   text-align: center;
-  background-color: #0D0D0D;
-  color: #A60D36;
+  background-color: #0A0A0A; /* Color oscuro de River Plate */
+  color: #D50032; /* Rojo de River Plate */
   padding: 15px;
   font-size: 0.9rem;
   margin-top: 30px;
