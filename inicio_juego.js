@@ -122,7 +122,9 @@ filas.forEach(fila => {
 
     // Verificar disponibilidad
     const yaJugado = checkBloqueo(dificultadSeleccionada);
-    btnEmpezar.disabled = yaJugado;
+
+    // Aquí es importante habilitar o deshabilitar el botón
+    btnEmpezar.disabled = yaJugado ? true : false;
 
     if (yaJugado) {
       btnEmpezar.textContent = 'Ya jugaste hoy';
@@ -152,6 +154,9 @@ btnEmpezar.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   agregarDescripcion();
   actualizarTimersModal();
+
+  // DESHABILITAR BOTÓN AL INICIO PORQUE NO HAY SELECCIÓN
+  btnEmpezar.disabled = true;
 
   // Actualizar timers cada minuto
   setInterval(actualizarTimersModal, 60000);
