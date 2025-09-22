@@ -6,7 +6,6 @@ body.river {
   margin: 0;
   padding: 0;
 }
-
 .back-btn {
   display: inline-block;
   margin: 24px 0 0 32px;
@@ -23,52 +22,45 @@ body.river {
   outline: none;
   position: relative;
 }
-
 .back-btn:hover, .back-btn:focus {
   background: #590414;
   color: #D9D9D9;
   box-shadow: 0 4px 16px #0002;
 }
-
-.river h1 {
+.realmadrid h1 {
   color: #A60D36;
   font-size: 2rem;
   margin: 20px 0;
   text-align: center;
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
-
-/* === TIMELINE === */
 .timeline-bar {
   position: relative;
   padding: 18px 10px;
   overflow-x: auto;
   background: transparent;
 }
-
 .timeline-bar .timeline-inner {
   position: relative;
   display: flex;
   gap: 36px;
   align-items: center;
   justify-content: center;
-  padding: 40px 40px 0 40px; /* puntos sobre la línea */
+  padding: 40px 40px 0 40px; /* Aumenta el padding-top para que los puntos queden sobre la línea */
   min-width: 320px;
 }
-
 .timeline-bar .timeline-inner::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 50%; /* Centra la línea verticalmente respecto a los puntos */
   height: 4px;
   background: #0D0D0D; /* Color institucional River */
   z-index: 1;
   border-radius: 2px;
   transform: translateY(-50%);
 }
-
 .timeline-bar .timeline-item {
   position: relative;
   z-index: 2;
@@ -80,7 +72,6 @@ body.river {
   color: #8C031C;
   min-width: 64px;
 }
-
 .timeline-bar .dot {
   width: 20px;
   height: 20px;
@@ -92,20 +83,17 @@ body.river {
   position: relative;
   z-index: 2;
 }
-
 .timeline-bar .label {
   font-size: 0.85rem;
   color: #8C031C;
   font-weight: 700;
 }
-
 .timeline-bar .timeline-item:hover .dot,
 .timeline-bar .timeline-item:focus .dot {
   transform: scale(1.25);
   background: #A60D36;
 }
-
-/* Responsive timeline en móviles */
+/* Responsive: menos padding y gap en móvil */
 @media (max-width: 680px) {
   .timeline-bar .timeline-inner {
     padding: 28px 4vw 0 4vw;
@@ -116,28 +104,16 @@ body.river {
     height: 3px;
   }
 }
-
-/* === SECCIONES DE AÑOS === */
 .timeline {
   max-width: 920px;
   margin: 18px auto 40px;
   padding: 0 16px;
 }
-
 .year-section {
   border-top: 3px solid #D9D9D9;
   padding-top: 20px;
   margin-bottom: 36px;
 }
-
-.year-section h2 {
-  color: #A60D36;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-/* === JERSEYS === */
 .jersey-row {
   display: flex;
   flex-direction: row;
@@ -145,7 +121,12 @@ body.river {
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
-
+.year-section h2 {
+  color: #A60D36;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
 .jersey-item {
   display: flex;
   flex-direction: column;
@@ -154,7 +135,6 @@ body.river {
   min-width: 200px;
   max-width: 220px;
 }
-
 .jersey-item img {
   width: 200px;
   height: 250px;
@@ -166,7 +146,6 @@ body.river {
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   margin-bottom: 8px;
 }
-
 .jersey-item figcaption {
   font-size: 1rem;
   font-weight: 600;
@@ -175,14 +154,11 @@ body.river {
   margin-top: 0;
   text-align: center;
 }
-
 .jersey-item img:hover {
   border-color: #A60D36;
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
-
-/* === FOOTER === */
 .river footer {
   text-align: center;
   background-color: #0D0D0D;
@@ -190,28 +166,4 @@ body.river {
   padding: 15px;
   font-size: 0.9rem;
   margin-top: 30px;
-}
-
-/* === Responsive: centrar todo en móviles === */
-@media (max-width: 480px) {
-  .jersey-row {
-    justify-content: center; /* Centra toda la fila de jerseys */
-    gap: 16px;
-  }
-
-  .jersey-item {
-    min-width: 150px;
-    max-width: 180px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .jersey-item img {
-    width: 160px;
-    height: 200px;
-  }
-
-  .year-section h2 {
-    text-align: center; /* Centra títulos en móvil */
-  }
 }
