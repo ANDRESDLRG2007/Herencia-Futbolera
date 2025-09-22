@@ -17,9 +17,14 @@ html, body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: var(--gris-fondo);
   color: var(--azul-oscuro);
+}
+
+/* Contenedor principal centrado */
+body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 10px;
 }
 
 header {
@@ -33,7 +38,7 @@ header {
   box-shadow: 0 2px 12px rgba(34,34,34,0.13);
 }
 
-.juego-container {
+.juego-container, .inicio-container {
   width: 90%;
   max-width: 400px;
   background: #fff;
@@ -51,12 +56,13 @@ header {
   to { transform: scale(1) translateY(0); opacity: 1; }
 }
 
-.juego-container h2 {
+.juego-container h2, .inicio-container h2 {
   font-size: 1.25em;
   font-weight: 800;
-  margin: 0.2em 0 0.5em;
+  margin: 0.2em 0 0.8em;
   letter-spacing: 0.01em;
   text-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 2px 8px rgba(58,57,89,0.19);
+  text-align: center;
 }
 
 .juego-camiseta {
@@ -64,6 +70,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.6em;
 }
 
 .juego-camiseta img {
@@ -105,6 +112,10 @@ header {
   transition: 0.2s;
 }
 
+.juego-inputs input::placeholder {
+  color: #ccc;
+}
+
 .juego-inputs input:focus {
   border-color: var(--amarillo);
   box-shadow: 0 0 8px rgba(242,189,29,0.6);
@@ -124,6 +135,7 @@ header {
   cursor: pointer;
   transition: 0.2s;
   box-shadow: 0 2px 8px rgba(34,34,34,0.13), 0 1px 4px rgba(58,57,89,0.19);
+  margin: 0.5em 0;
 }
 
 .juego-btn:hover:not(:disabled) {
@@ -144,6 +156,7 @@ header {
   color: var(--amarillo);
   text-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 1px 4px rgba(58,57,89,0.19);
   min-height: 1.2em;
+  text-align: center;
 }
 
 .juego-volver {
@@ -158,41 +171,32 @@ header {
   color: var(--amarillo);
 }
 
-/* MODAL */
-#inicio-modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(58,57,89,0.9);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#modal-box {
-  width: 90%;
-  max-width: 420px;
-  background: var(--gris-fondo);
-  color: var(--azul-oscuro);
-  border: 2px solid var(--azul-oscuro);
-  padding: 1.2em 0.7em;
-  border-radius: 1.5em;
+/* Modal de dificultad */
+.modal-dif-list {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 0.5em;
+  margin: 1em 0;
 }
 
 .modal-dif-row {
-  width: 90%;
-  padding: 0.6em;
-  margin: 0.3em 0;
-  text-align: center;
+  width: 100%;
+  padding: 0.8em;
+  text-align: left;
   border: 2px solid var(--azul-oscuro);
   border-radius: 0.7em;
   background: var(--gris-fondo);
   cursor: pointer;
   transition: 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-dif-row:hover {
+  background: var(--azul-claro);
+  color: white;
 }
 
 .modal-dif-row.selected {
@@ -201,34 +205,57 @@ header {
   border-color: var(--amarillo);
 }
 
-#empezar-juego {
-  width: 90%;
-  padding: 0.6em;
-  margin-top: 0.5em;
-  font-weight: bold;
-  border-radius: 0.5em;
-  border: 2px solid var(--azul-oscuro);
-  background: var(--amarillo);
-  color: var(--negro);
-  cursor: pointer;
-  transition: 0.2s;
+.modal-dif-row span:first-child {
+  font-weight: 600;
 }
 
-#empezar-juego:disabled {
-  background: var(--azul-claro);
-  color: #fff;
-  border-color: var(--azul-claro);
-  opacity: 0.6;
+.modal-dif-row span:last-child {
+  font-size: 0.85em;
+  font-weight: 500;
 }
 
-a { color: var(--azul-oscuro); text-decoration: none; }
-
-a:hover { color: var(--amarillo); }
+#vidas {
+  text-align: center;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+}
 
 /* Responsive */
 @media (max-width: 600px) {
-  .juego-camiseta img { width: 70px; height: 70px; }
-  .juego-container { padding: 16px 8px; }
-  #modal-box { padding: 0.7em 0.4em; border-radius: 0.8em; }
-  .modal-dif-row, #empezar-juego { font-size: 0.95em; padding: 0.5em; }
+  .juego-camiseta img { 
+    width: 70px; 
+    height: 70px; 
+  }
+  
+  .juego-container, .inicio-container { 
+    padding: 16px 12px;
+    margin: 10px;
+  }
+  
+  .modal-dif-row { 
+    font-size: 0.95em; 
+    padding: 0.6em; 
+  }
+  
+  .juego-btn {
+    font-size: 1em;
+    padding: 0.6em 1em;
+  }
+  
+  .juego-inputs input {
+    min-width: 160px;
+    padding: 0.6em 1em;
+  }
+}
+
+/* Estilos adicionales para WebView */
+@media screen and (max-height: 600px) {
+  body {
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+  
+  .juego-container, .inicio-container {
+    margin-top: 0;
+  }
 }
