@@ -197,7 +197,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: unset;
     }
     #modal-box h2 { color: var(--azul-oscuro); }
     .modal-dif-row { border: 2px solid var(--azul-oscuro) !important; background: var(--gris-fondo); color: var(--azul-oscuro); }
@@ -248,30 +247,30 @@
   </style>
 </head>
   <body>
-  <div id="inicio-modal" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff9f3ee;z-index:1000;display:flex;align-items:center;justify-content:center;">
-    <div id="modal-box" style="background:#fff;border-radius:1.5em;box-shadow:0 4px 24px #0003;padding:2.5em 2.5em 2.5em 2.5em;max-width:420px;min-width:320px;min-height:520px;position:relative;display:flex;flex-direction:column;align-items:center;">
-      <a href="/Herencia-Futbolera/index.html" style="position:absolute;top:1.2em;left:1.5em;font-size:1.1em;color:#222;text-decoration:underline;font-weight:500;">volver</a>
-  <h2 style="margin:2.5em 0 0.7em 0;font-size:2em;font-weight:700;">juego</h2>
-  <div id="modal-desc" style="margin-bottom:1.5em;font-size:1.1em;color:#444;text-align:center;">Selecciona una dificultad para ver la descripción.</div>
-      <div style="width:100%;display:flex;flex-direction:column;gap:1.2em;align-items:center;">
-        <div class="modal-dif-row" style="display:flex;align-items:center;justify-content:space-between;width:90%;border:2px solid #222;border-radius:0.7em;padding:0.7em 1.2em;font-size:1.15em;font-weight:500;">
-          <span style="flex:1;">fácil</span>
-          <span id="modal-timer-facil" style="flex:1;text-align:right;font-size:1em;font-weight:400;color:#666;">-</span>
+  <div id="inicio-modal">
+    <div id="modal-box">
+      <a href="/Herencia-Futbolera/index.html" class="modal-volver">volver</a>
+      <h2>juego</h2>
+      <div id="modal-desc">Selecciona una dificultad para ver la descripción.</div>
+      <div class="modal-dif-list">
+        <div class="modal-dif-row">
+          <span>fácil</span>
+          <span id="modal-timer-facil">-</span>
         </div>
-        <div class="modal-dif-row" style="display:flex;align-items:center;justify-content:space-between;width:90%;border:2px solid #222;border-radius:0.7em;padding:0.7em 1.2em;font-size:1.15em;font-weight:500;">
-          <span style="flex:1;">difícil</span>
-          <span id="modal-timer-dificil" style="flex:1;text-align:right;font-size:1em;font-weight:400;color:#666;">-</span>
+        <div class="modal-dif-row">
+          <span>difícil</span>
+          <span id="modal-timer-dificil">-</span>
         </div>
       </div>
-      <button id="empezar-juego" class="juego-btn" style="margin-top:2.5em;width:60%;font-size:1.15em;">empezar</button>
+      <button id="empezar-juego" class="juego-btn">empezar</button>
     </div>
   </div>
   <div class="juego-container">
-    <h2 style="color:var(--azul-oscuro);font-size:1.1em;font-weight:700;margin-bottom:0.5em;letter-spacing:0.01em;">Minijuego de Camisetas</h2>
+    <h2>Minijuego de Camisetas</h2>
     <div class="juego-camiseta" id="juego-camiseta"></div>
-    <form id="juego-form" autocomplete="off" style="width:100%;max-width:320px;">
+    <form id="juego-form" autocomplete="off">
       <div class="juego-inputs" id="juego-inputs"></div>
-      <button type="submit" class="juego-btn" style="width:100%;margin-top:0.7em;">Comprobar</button>
+      <button type="submit" class="juego-btn">Comprobar</button>
     </form>
     <div class="juego-feedback" id="juego-feedback"></div>
     <a href="/Herencia-Futbolera/index.html" class="juego-volver">← Volver a clubes</a>

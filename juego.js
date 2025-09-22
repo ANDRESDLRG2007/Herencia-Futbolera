@@ -264,7 +264,7 @@ function mostrarModalInicio() {
 
 function ocultarModalInicio() {
   modal.style.display = 'none';
-  document.querySelector('.juego-container').style.filter = 'blur(0)';
+  limpiarBlurJuego();
 }
 
 function seleccionarDificultad(dif) {
@@ -343,3 +343,8 @@ btnEmpezar.addEventListener('click', () => {
 
 
 window.addEventListener('DOMContentLoaded', mostrarModalInicio);
+
+function limpiarBlurJuego() {
+  const cont = document.querySelector('.juego-container');
+  if (cont) cont.style.filter = 'blur(0)';
+}
