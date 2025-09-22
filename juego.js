@@ -229,15 +229,160 @@ form.addEventListener('submit', e => {
     }
 });
 
-// --- Inicializar ---
-document.addEventListener('DOMContentLoaded', () => {
-    // Verificar si viene de la página de inicio con dificultad seleccionada
-    const dificultadGuardada = localStorage.getItem('dificultad-juego');
-    if (dificultadGuardada) {
-        dificultad = dificultadGuardada;
-        localStorage.removeItem('dificultad-juego'); // Limpiar después de usar
-    }
+// --- Mostrar selección de dificultad en juego.html ---
+function mostrarSeleccionDificultad() {
+    const modal = document.createElement('div');
+    modal.id = 'seleccion-modal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(58,57,89,0.9);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
     
+    modal.innerHTML = `
+        <div style="background:#fff;border-radius:1.5em;box-shadow:0 4px 24px #0003;padding:2.2em 2.5em 2em 2.5em;max-width:420px;text-align:center;">
+            <h2>Selecciona la dificultad</h2>
+            <div style="margin: 1em 0;">
+                <div class="modal-dif-row" data-dif="facil" style="margin: 0.5em 0; padding: 0.8em; border: 2px solid var(--azul-oscuro); border-radius: 0.7em; cursor: pointer; background: var(--gris-fondo); display: flex; justify-content: space-between; align-items: center;">
+                    <div style="text-align: left;">
+                        <strong>Fácil</strong><br>
+                        <small>Adivina el país del club</small>
+                    </div>
+                    <span id="timer-facil" style="font-size: 0.85em; font-weight: 500; color: #2a7c2a;">Disponible</span>
+                </div>
+                <div class="modal-dif-row" data-dif="dificil" style="margin: 0.5em 0; padding: 0.8em; border: 2px solid var(--azul-oscuro); border-radius: 0.7em; cursor: pointer; background: var(--gris-fondo); display: flex; justify-content: space-between; align-items: center;">
+                    <div style="text-align: left;">
+                        <strong>Difícil</strong><br>
+                        <small>Adivina equipo y temporada</small>
+                    </div>
+                    <span id="timer-dificil" style="font-size: 0.85em; font-weight: 500; color: #2a7c2a;">Disponible</span>
+                </div>
+            </div>
+            <div id="descripcion-dificultad" style="margin: 1em 0; padding: 1em; background: var(--gris-fondo); border-radius: 0.5em; min-height: 60px; color: var(--azul-oscuro); font-size: 0.95em; text-align: left;">
+                Selecciona una dificultad para ver la descripción del modo de juego.
+            </div>
+            <div id="disponibilidad-info" style="margin: 0.5em 0; font-size: 0.9em; font-weight: 600; color: var(--azul-oscuro);">
+                
+            </div>
+            <button id="confirmar-dificultad" class="juego-btn" disabled style="margin-top: 1em;">Selecciona una dificultad</button>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Actualizar timers inmediatamente
+    actualizarTimersEnModal();
+    
+    let dificultadTemp = null;
+    const filas = modal.querySelectorAll('.modal-dif-row');
+    const btnConfirmar = modal.querySelector('#confirmar-dificultad');
+    const descripcion = modal.querySelector('#descripcion-dificultad');
+    const disponibilidad = modal.querySelector('#disponibilidad-info');
+    
+    filas.forEach(fila => {
+        fila.addEventListener('click', () => {
+            dificultadTemp = fila.dataset.dif;
+            
+            // Actualizar selección visual
+            filas.forEach(f => {
+                f.style.background = 'var(--gris-fondo)';
+                f.style.borderColor = 'var(--azul-oscuro)';
+            });
+            fila.style.background = 'var(--amarillo)';
+            fila.style.borderColor = 'var(--amarillo)';
+            
+            // Actualizar descripción
+            if (dificultadTemp === 'facil') {
+                descripcion.innerHTML = `
+                    <strong>Modo Fácil:</strong><br>
+                    • Adivina el país del club al que pertenece la camiseta<br>
+                    • Tienes 3 vidas<br>
+                    • Gana completando 5 respuestas correctas seguidas
+                `;
+            } else {
+                descripcion.innerHTML = `
+                    <strong>Modo Difícil:</strong><br>
+                    • Adivina el equipo exacto y la temporada de la camiseta<br>
+                    • Tienes 3 vidas<br>
+                    • Gana completando 5 respuestas correctas seguidas
+                `;
+            }
+            
+            // Verificar disponibilidad
+            const yaJugado = checkBloqueo(dificultadTemp);
+            btnConfirmar.disabled = yaJugado;
+            
+            if (yaJugado) {
+                btnConfirmar.textContent = 'Ya jugaste hoy';
+                btnConfirmar.style.opacity = '0.6';
+                disponibilidad.innerHTML = '⏰ No disponible hasta mañana';
+                disponibilidad.style.color = '#b00';
+            } else {
+                btnConfirmar.textContent = 'Empezar Juego';
+                btnConfirmar.style.opacity = '1';
+                disponibilidad.innerHTML = '✅ Disponible para jugar';
+                disponibilidad.style.color = '#2a7c2a';
+            }
+        });
+    });
+    
+    btnConfirmar.addEventListener('click', () => {
+        if (dificultadTemp && !checkBloqueo(dificultadTemp)) {
+            dificultad = dificultadTemp;
+            document.body.removeChild(modal);
+            iniciarJuego();
+        }
+    });
+}
+
+// --- Actualizar timers en modal ---
+function actualizarTimersEnModal() {
+    ['facil','dificil'].forEach(dif => {
+        const timerSpan = document.getElementById('timer-' + dif);
+        if (!timerSpan) return;
+        
+        const key = 'juego-camisetas-' + dif;
+        const data = localStorage.getItem(key);
+        if (!data) {
+            timerSpan.textContent = 'Disponible';
+            timerSpan.style.color = '#2a7c2a';
+            return;
+        }
+        
+        const { fecha } = JSON.parse(data);
+        const hoy = new Date().toISOString().slice(0,10);
+        if(fecha !== hoy){
+            timerSpan.textContent = 'Disponible';
+            timerSpan.style.color = '#2a7c2a';
+        } else {
+            function update(){
+                const ahora = new Date();
+                const manana = new Date();
+                manana.setHours(24,0,0,0);
+                const diff = manana - ahora;
+                const h = Math.floor(diff/1000/60/60);
+                const m = Math.floor((diff/1000/60)%60);
+                const s = Math.floor((diff/1000)%60);
+                if (timerSpan) {
+                    timerSpan.textContent = `${h}h ${m}m`;
+                    timerSpan.style.color = '#b00';
+                }
+                if(diff > 0 && document.getElementById('timer-' + dif)) {
+                    setTimeout(update, 60000); // Actualizar cada minuto
+                }
+            }
+            update();
+        }
+    });
+}
+
+// --- Iniciar juego después de seleccionar dificultad ---
+function iniciarJuego() {
     // Verificar bloqueo
     if (checkBloqueo(dificultad)) {
         mostrarBloqueo();
@@ -247,4 +392,21 @@ document.addEventListener('DOMContentLoaded', () => {
     renderInputs();
     resetJuego();
     elegirCamisetaAleatoria();
+    
+    // Mostrar el formulario
+    form.style.display = 'block';
+}
+
+// --- Inicializar ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Verificar si viene de la página de inicio con dificultad seleccionada
+    const dificultadGuardada = localStorage.getItem('dificultad-juego');
+    if (dificultadGuardada) {
+        dificultad = dificultadGuardada;
+        localStorage.removeItem('dificultad-juego'); // Limpiar después de usar
+        iniciarJuego();
+    } else {
+        // Si no hay dificultad seleccionada, mostrar modal de selección
+        mostrarSeleccionDificultad();
+    }
 });
