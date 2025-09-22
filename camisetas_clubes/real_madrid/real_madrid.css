@@ -38,6 +38,7 @@ body.realmadrid {
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
 
+/* Timeline */
 .timeline-bar {
   position: relative;
   padding: 18px 10px;
@@ -90,6 +91,7 @@ body.realmadrid {
   transition: transform .15s ease, background .15s;
   position: relative;
   z-index: 2;
+  margin-bottom: 8px;
 }
 
 .timeline-bar .label {
@@ -132,19 +134,20 @@ body.realmadrid {
   margin-bottom: 36px;
 }
 
+.year-section h2 {
+  color: #D9AA52;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center; /* centrado */
+}
+
 .jersey-row {
   display: flex;
   flex-direction: row;
   gap: 32px;
   flex-wrap: wrap;
   margin-bottom: 24px;
-}
-
-.year-section h2 {
-  color: #D9AA52;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  text-align: left;
+  justify-content: center; /* centrado */
 }
 
 .jersey-item {
@@ -154,6 +157,7 @@ body.realmadrid {
   justify-content: flex-start;
   min-width: 200px;
   max-width: 220px;
+  text-align: center; /* centrado */
 }
 
 .jersey-item img {

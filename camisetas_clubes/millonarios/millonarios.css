@@ -1,7 +1,7 @@
 /* === Estilos exclusivos para Millonarios FC === */
 body.millonarios {
   background-color: #FFFFFF;
-  color: #273459;
+  color: #a6beff;
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -51,7 +51,7 @@ body.millonarios {
   gap: 36px;
   align-items: center;
   justify-content: center;
-  padding: 40px 40px 0 40px; /* Aumenta el padding-top para que los puntos queden sobre la línea */
+  padding: 40px 40px 0 40px;
   min-width: 320px;
 }
 
@@ -60,9 +60,9 @@ body.millonarios {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%; /* Centra la línea verticalmente respecto a los puntos */
+  top: 50%;
   height: 4px;
-  background: #273459; /* Color institucional Millonarios */
+  background: #273459;
   z-index: 1;
   border-radius: 2px;
   transform: translateY(-50%);
@@ -102,17 +102,6 @@ body.millonarios {
 .timeline-bar .timeline-item:focus .dot {
   transform: scale(1.25);
   background: #2686F3;
-}
-
-@media (max-width: 680px) {
-  .timeline-bar .timeline-inner {
-    padding: 28px 4vw 0 4vw;
-    gap: 14vw;
-    min-width: 0;
-  }
-  .timeline-bar .timeline-inner::before {
-    height: 3px;
-  }
 }
 
 .timeline {
@@ -185,4 +174,59 @@ body.millonarios {
   padding: 15px;
   font-size: 0.9rem;
   margin-top: 30px;
+}
+
+/* === Responsivo === */
+@media (max-width: 680px) {
+  /* Timeline horizontal pero centrado */
+  .timeline-bar .timeline-inner {
+    padding: 20px 10px 0 10px;
+    gap: 20px;
+    justify-content: center;
+    min-width: unset;
+  }
+
+  .timeline-bar .timeline-inner::before {
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Centrar jerseys y títulos */
+  .jersey-row {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .jersey-item {
+    min-width: 150px;
+    max-width: 180px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .jersey-item img {
+    width: 160px;
+    height: 200px;
+  }
+
+  .year-section h2 {
+    text-align: center;
+  }
+
+  /* Timeline horizontal, puntos centrados */
+  .timeline-bar .timeline-inner {
+    gap: 14vw; /* más separación relativa en móviles */
+    padding: 20px 5vw 0 5vw;
+    justify-content: center;
+  }
+
+  .timeline-bar .timeline-inner::before {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 3px;
+    width: 100%;
+    transform: translateY(-50%);
+  }
 }
