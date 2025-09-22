@@ -3,60 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenidos a la App</title>
+  <title>Clubes de Fútbol</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Estilos para el splash screen */
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: black;
-    }
-
-    .logo-container {
-      border-radius: 20px;
-      padding: 30px;
-      animation: fadeOut 5s forwards;
-    }
-
-    .logo-container img {
-      width: 150px; /* Ajusta el tamaño de tu logo */
-      height: auto;
-    }
-
-    /* Efecto de desvanecimiento */
-    @keyframes fadeOut {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    /* Cuando el logo desaparezca, se redirige a la siguiente página */
-    .fade {
-      display: none;
-    }
-  </style>
 </head>
 <body>
-
-  <!-- Contenedor del logo -->
-  <div class="logo-container">
-    <img src="./img/logo.png" alt="Logo de la App">
+  <h1>Clubes de Fútbol Icónicos</h1>
+  <section>
+    <h2>Clubes Europeos</h2>
+    <div class="club-grid">
+      <a href="./camisetas_clubes/barcelona/barcelona.html">
+        <img src="./escudos/FC_Barcelona_(crest).svg.webp" alt="Barcelona">
+        <span class="club-name">Barcelona</span>
+      </a>
+      <a href="./camisetas_clubes/real_madrid/real_madrid.html">
+        <img src="./escudos/Real_Madrid_CF.svg.png" alt="Real Madrid">
+        <span class="club-name">Real Madrid</span>
+      </a>
+      <a href="./camisetas_clubes/milan/milan.html">
+        <img src="./escudos/Logo_of_AC_Milan.svg.png" alt="AC Milan">
+        <span class="club-name">AC Milan</span>
+      </a>
+    </div>
+  </section>
+  <section>
+    <h2>Clubes Sudamericanos</h2>
+    <div class="club-grid">
+       <a href="./camisetas_clubes/millonarios/millonarios.html">
+        <img src="./escudos/Escudo_de_Millonarios_Fútbol_Club.svg.png" alt="Millonarios">
+        <span class="club-name">Millonarios</span>
+      </a>
+      <a href="./camisetas_clubes/boca/boca.html">
+        <img src="./escudos/Boca_Juniors_logo18.svg.png" alt="Boca Juniors">
+        <span class="club-name">Boca Juniors</span>
+      </a>
+      <a href="./camisetas_clubes/river/river.html">
+        <img src="./escudos/Logo_River_Plate.png" alt="River Plate">
+        <span class="club-name">River Plate</span>
+      </a>
+    </div>
+  </section>
+</body>
+  <div style="text-align:center;margin:2.5em 0 1.5em 0;">
+    <a href="./juego.html" class="juego-btn" style="display:inline-block;padding:0.8em 2em;font-size:1.2em;background:#222;color:#fff;border-radius:2em;text-decoration:none;font-weight:600;box-shadow:0 2px 8px #0002;transition:background 0.2s;">🎮 Jugar minijuego de camisetas</a>
   </div>
-
-  <script>
-    // Redirigir después de 5 segundos con la animación de desvanecimiento
-    setTimeout(function() {
-      window.location.href = 'clubes.html';
-    }, 5000); // 5000ms = 5 segundos
-  </script>
-
 </body>
 </html>
