@@ -1,11 +1,12 @@
 /* === Estilos exclusivos para Millonarios FC === */
-body.realmadrid {
+body.millonarios {
   background-color: #FFFFFF;
   color: #273459;
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
+
 .back-btn {
   display: inline-block;
   margin: 24px 0 0 32px;
@@ -22,24 +23,28 @@ body.realmadrid {
   outline: none;
   position: relative;
 }
+
 .back-btn:hover, .back-btn:focus {
   background: #2686F3;
   color: #FFFFFF;
   box-shadow: 0 4px 16px #0002;
 }
-.realmadrid h1 {
+
+.millonarios h1 {
   color: #2686F3;
   font-size: 2rem;
   margin: 20px 0;
   text-align: center;
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
+
 .timeline-bar {
   position: relative;
   padding: 18px 10px;
   overflow-x: auto;
   background: transparent;
 }
+
 .timeline-bar .timeline-inner {
   position: relative;
   display: flex;
@@ -49,6 +54,7 @@ body.realmadrid {
   padding: 40px 40px 0 40px; /* Aumenta el padding-top para que los puntos queden sobre la línea */
   min-width: 320px;
 }
+
 .timeline-bar .timeline-inner::before {
   content: "";
   position: absolute;
@@ -61,6 +67,7 @@ body.realmadrid {
   border-radius: 2px;
   transform: translateY(-50%);
 }
+
 .timeline-bar .timeline-item {
   position: relative;
   z-index: 2;
@@ -72,6 +79,7 @@ body.realmadrid {
   color: #23468C;
   min-width: 64px;
 }
+
 .timeline-bar .dot {
   width: 20px;
   height: 20px;
@@ -83,16 +91,19 @@ body.realmadrid {
   position: relative;
   z-index: 2;
 }
+
 .timeline-bar .label {
   font-size: 0.85rem;
   color: #23468C;
   font-weight: 700;
 }
+
 .timeline-bar .timeline-item:hover .dot,
 .timeline-bar .timeline-item:focus .dot {
   transform: scale(1.25);
   background: #2686F3;
 }
+
 @media (max-width: 680px) {
   .timeline-bar .timeline-inner {
     padding: 28px 4vw 0 4vw;
@@ -103,16 +114,19 @@ body.realmadrid {
     height: 3px;
   }
 }
+
 .timeline {
   max-width: 920px;
   margin: 18px auto 40px;
   padding: 0 16px;
 }
+
 .year-section {
   border-top: 3px solid #D99441;
   padding-top: 20px;
   margin-bottom: 36px;
 }
+
 .jersey-row {
   display: flex;
   flex-direction: row;
@@ -120,12 +134,14 @@ body.realmadrid {
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
+
 .year-section h2 {
   color: #D99441;
   font-size: 1.5rem;
   margin-bottom: 15px;
   text-align: left;
 }
+
 .jersey-item {
   display: flex;
   flex-direction: column;
@@ -134,6 +150,7 @@ body.realmadrid {
   min-width: 200px;
   max-width: 220px;
 }
+
 .jersey-item img {
   width: 200px;
   height: 250px;
@@ -145,6 +162,7 @@ body.realmadrid {
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   margin-bottom: 8px;
 }
+
 .jersey-item figcaption {
   font-size: 1rem;
   font-weight: 600;
@@ -153,12 +171,14 @@ body.realmadrid {
   margin-top: 0;
   text-align: center;
 }
+
 .jersey-item img:hover {
   border-color: #D99441;
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
-.realmadrid footer {
+
+.millonarios footer {
   text-align: center;
   background-color: #273459;
   color: #D99441;

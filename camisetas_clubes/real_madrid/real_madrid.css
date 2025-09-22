@@ -6,6 +6,7 @@ body.realmadrid {
   margin: 0;
   padding: 0;
 }
+
 .back-btn {
   display: inline-block;
   margin: 24px 0 0 32px;
@@ -22,11 +23,13 @@ body.realmadrid {
   outline: none;
   position: relative;
 }
+
 .back-btn:hover, .back-btn:focus {
   background: #D9AA52;
   color: #F2F2F2;
   box-shadow: 0 4px 16px #0002;
 }
+
 .realmadrid h1 {
   color: #D9AA52;
   font-size: 2rem;
@@ -34,12 +37,14 @@ body.realmadrid {
   text-align: center;
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
+
 .timeline-bar {
   position: relative;
   padding: 18px 10px;
   overflow-x: auto;
   background: transparent;
 }
+
 .timeline-bar .timeline-inner {
   position: relative;
   display: flex;
@@ -49,6 +54,7 @@ body.realmadrid {
   padding: 40px 40px 0 40px;
   min-width: 320px;
 }
+
 .timeline-bar .timeline-inner::before {
   content: "";
   position: absolute;
@@ -61,17 +67,7 @@ body.realmadrid {
   border-radius: 2px;
   transform: translateY(-50%);
 }
-.timeline-bar .timeline-point {
-  position: relative;
-  z-index: 2;
-  background: #D9AA52;
-  border: 3px solid #1C1D22;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-bottom: 8px;
-  box-shadow: 0 2px 8px #0001;
-}
+
 .timeline-bar .timeline-item {
   position: relative;
   z-index: 2;
@@ -83,6 +79,7 @@ body.realmadrid {
   color: #1C1D22;
   min-width: 64px;
 }
+
 .timeline-bar .dot {
   width: 20px;
   height: 20px;
@@ -94,16 +91,19 @@ body.realmadrid {
   position: relative;
   z-index: 2;
 }
+
 .timeline-bar .label {
   font-size: 0.85rem;
   color: #1C1D22;
   font-weight: 700;
 }
+
 .timeline-bar .timeline-item:hover .dot,
 .timeline-bar .timeline-item:focus .dot {
   transform: scale(1.25);
   background: #D9AA52;
 }
+
 @media (max-width: 680px) {
   .timeline-bar .timeline-inner {
     padding: 28px 4vw 0 4vw;
@@ -113,22 +113,25 @@ body.realmadrid {
   .timeline-bar .timeline-inner::before {
     height: 3px;
   }
-  .timeline-bar .timeline-point {
-    width: 22px;
-    height: 22px;
+  .timeline-bar .dot {
+    width: 16px;
+    height: 16px;
     margin-bottom: 6px;
   }
 }
+
 .timeline {
   max-width: 920px;
   margin: 18px auto 40px;
   padding: 0 16px;
 }
+
 .year-section {
   border-top: 3px solid #D7D7D9;
   padding-top: 20px;
   margin-bottom: 36px;
 }
+
 .jersey-row {
   display: flex;
   flex-direction: row;
@@ -136,12 +139,14 @@ body.realmadrid {
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
+
 .year-section h2 {
   color: #D9AA52;
   font-size: 1.5rem;
   margin-bottom: 15px;
   text-align: left;
 }
+
 .jersey-item {
   display: flex;
   flex-direction: column;
@@ -150,6 +155,7 @@ body.realmadrid {
   min-width: 200px;
   max-width: 220px;
 }
+
 .jersey-item img {
   width: 200px;
   height: 250px;
@@ -161,6 +167,7 @@ body.realmadrid {
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   margin-bottom: 8px;
 }
+
 .jersey-item figcaption {
   font-size: 1rem;
   font-weight: 600;
@@ -169,11 +176,13 @@ body.realmadrid {
   margin-top: 0;
   text-align: center;
 }
+
 .jersey-item img:hover {
   border-color: #D9AA52;
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
+
 .realmadrid footer {
   text-align: center;
   background-color: #3E424E;

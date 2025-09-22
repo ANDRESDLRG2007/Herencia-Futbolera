@@ -1,233 +1,130 @@
-/* Botón volver a clubes */
- .back-btn {
-  display: inline-block;
-  margin: 24px 0 0 32px;
-  padding: 8px 22px 8px 16px;
-  background: #A50044;
-  color: #fff;
-  font-size: 1.08rem;
-  font-weight: 600;
-  border-radius: 24px;
-  text-decoration: none;
-  box-shadow: 0 2px 8px #0001;
-  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
-  border: none;
-  outline: none;
-  position: relative;
-}
-.back-btn:hover, .back-btn:focus {
-  background: #004D98;
-  color: #FFED02;
-  box-shadow: 0 4px 16px #0002;
-}
-/* === Estilos exclusivos para FC Barcelona === */
+/* === PÁGINA DETALLE EQUIPO (Barcelona) === */
 
+/* Fondo general */
 body.barcelona {
-  background-color: #F2F2F2;
-  color: #004D98;
+  background: linear-gradient(180deg, #A50044 0%, #004D98 100%);
+  color: #222;
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
+/* Contenedor principal */
+.detalle-equipo {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
 /* Título */
-.barcelona h1 {
-  color: #A50044;
-  font-size: 2rem;
-  margin: 20px 0;
+.detalle-equipo h1 {
   text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #FFED02;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
-/* TIMELINE SUPERIOR: línea que atraviesa y puntos superpuestos */
-.timeline-bar {
-  position: relative;
-  padding: 18px 10px;
-  overflow-x: auto;
-  background: transparent;
-}
-
-/* línea principal (barra) */
-.timeline-bar .timeline-inner {
-  position: relative;
-  display: flex;
-  gap: 36px;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 40px 0 40px; /* Aumenta el padding-top para que los puntos queden sobre la línea */
-  min-width: 320px;
-}
-
-/* linea horizontal central (dentro del contenedor) */
-.timeline-bar .timeline-inner::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%; /* Centra la línea verticalmente respecto a los puntos */
-  height: 4px;
-  background: #3A3959; /* Color institucional Barcelona */
-  z-index: 1;
-  border-radius: 2px;
-  transform: translateY(-50%);
-}
-
-/* cada item del timeline */
-.timeline-bar .timeline-item {
-  position: relative;
-  z-index: 2; /* sobre la línea */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #222;
-  min-width: 64px;
-}
-
-/* el punto que se superpone */
-.timeline-bar .dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #F2BD1D;
-  border: 2px solid #3A3959;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.16);
-  transition: transform .15s ease, background .15s;
-  position: relative;
-  z-index: 2;
-}
-
-/* etiqueta debajo del punto */
-.timeline-bar .label {
-  font-size: 0.85rem;
-  color: #222;
-  font-weight: 700;
-}
-
-/* hover y focus accesible */
-.timeline-bar .timeline-item:hover .dot,
-.timeline-bar .timeline-item:focus .dot {
-  transform: scale(1.25);
-  background: #A50044;
-}
-
-/* Asegura que los puntos estén sobre la línea */
-.timeline-bar .timeline-point {
-  position: relative;
-  z-index: 2;
-  background: #F2BD1D;
-  border: 3px solid #3A3959;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-bottom: 8px;
-  box-shadow: 0 2px 8px #0001;
-}
-
-/* --- timeline: responsive - scroll horiz si hay muchos años --- */
-@media (max-width: 680px) {
-  .timeline-bar .timeline-inner {
-    padding: 28px 4vw 0 4vw;
-    gap: 14vw;
-    min-width: 0;
-  }
-  .timeline-bar .timeline-inner::before {
-    height: 3px;
-  }
-  .timeline-bar .timeline-point {
-    width: 22px;
-    height: 22px;
-    margin-bottom: 6px;
-  }
-}
-
-/* --- Main timeline content (secciones por año) --- */
-.timeline {
-  max-width: 920px;
-  margin: 18px auto 40px;
-  padding: 0 16px;
-}
-
-
-
-.jersey-row {
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-  flex-wrap: wrap;
+/* Tarjeta descriptiva */
+.detalle-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   margin-bottom: 24px;
 }
 
+/* Imagen camiseta */
+.detalle-card img {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto 16px;
+  display: block;
+  border-radius: 12px;
+  border: 4px solid #004D98;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
 
-.year-section h2 {
+/* Lista de atributos */
+.detalle-info p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.detalle-info strong {
   color: #A50044;
-  font-size: 1.25rem;
-  margin: 2px 0 12px;
+}
+
+/* Sección jugadores */
+.jugadores {
+  margin-top: 20px;
+}
+.jugadores h3 {
+  font-size: 1.2rem;
+  color: #004D98;
   font-weight: 700;
+  margin-bottom: 12px;
 }
-
-.year-section {
-  border-top: 3px solid #222;
-  margin-bottom: 40px;
-  padding-top: 20px;
-}
-.year-section h2 {
-  color: #A50044;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.jersey-item {
+.jugadores-lista {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-width: 200px;
-  max-width: 220px;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-/* Camisetas uniformes */
-.jersey-item img {
-  width: 200px;
-  height: 250px;
+.jugadores-lista figure {
+  text-align: center;
+}
+.jugadores-lista img {
+  width: 80px;
+  height: 100px;
   object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 3px solid #004D98;
-  background: #fff;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-  margin-bottom: 8px;
+  border-radius: 12px;
+  border: 3px solid #F2BD1D;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  transition: transform .2s ease;
+}
+.jugadores-lista img:hover {
+  transform: scale(1.08);
+}
+.jugadores-lista figcaption {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #222;
 }
 
-.jersey-item figcaption {
+/* Botón volver */
+.back-btn {
+  display: block;
+  margin: 12px auto 24px;
+  padding: 10px 20px;
+  background: #A50044;
+  color: #fff;
   font-size: 1rem;
   font-weight: 600;
-  color: #2d2d2d;
-  margin-bottom: 4px;
-  margin-top: 0;
+  border-radius: 28px;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
   text-align: center;
+  transition: all 0.2s ease;
+}
+.back-btn:hover {
+  background: #004D98;
+  color: #FFED02;
+  transform: translateY(-2px);
 }
 
-.jersey-item img:hover {
-  border-color: #F2BD1D;
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-}
-
-/* Footer */
-footer.barcelona-footer {
-  text-align: center;
-  background-color: #ffffff;
-  color: #3695d9;
-  padding: 15px;
-  font-size: 0.9rem;
-  margin-top: 30px;
-}
-
-/* Ajuste para que el contenido no quede pegado arriba en móvil */
-@media (max-width: 600px) {
-  main, .timeline, .contenido-principal {
-    padding-top: 2.5em !important;
+/* Responsive */
+@media (max-width: 480px) {
+  .detalle-equipo h1 {
+    font-size: 1.5rem;
+  }
+  .detalle-card {
+    padding: 14px;
+  }
+  .jugadores-lista img {
+    width: 70px;
+    height: 90px;
   }
 }
