@@ -136,14 +136,14 @@ function finalizarJuego(correcto) {
   } else {
     alert("❌ Perdiste todas las vidas.");
   }
-  window.location.href = "inicio_juego.html";
+  window.location.href = "/Herencia-Futbolera/inicio_juego.html";
 }
 
 // --- Iniciar juego ---
 function iniciarJuego() {
   if (checkBloqueo()) {
     alert("⏰ Ya jugaste hoy en esta dificultad. Vuelve mañana.");
-    window.location.href = "inicio_juego.html";
+    window.location.href = "/Herencia-Futbolera/inicio_juego.html";
     return;
   }
 
@@ -212,7 +212,7 @@ form.addEventListener("submit", e => {
 document.addEventListener("DOMContentLoaded", () => {
   dificultad = localStorage.getItem("dificultad-juego");
   if (!dificultad) {
-    window.location.href = "inicio_juego.html";
+    window.location.href = "/Herencia-Futbolera/inicio_juego.html";
     return;
   }
   iniciarJuego();
