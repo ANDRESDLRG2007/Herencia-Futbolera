@@ -12,7 +12,6 @@
 
 html, body {
   min-height: 100vh;
-  height: 100vh;
   margin: 0;
   padding: 0;
   background: #f2f2f2;
@@ -21,6 +20,10 @@ html, body {
 body {
   color: var(--azul-oscuro);
   font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Centrado vertical solo si NO hay modal */
+body:not(:has(#inicio-modal[style*="display: flex"])) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,6 +196,7 @@ header {
   align-items: center;
   justify-content: center;
   overflow-y: auto;
+  padding: 0; /* quita padding extra */
 }
 
 #modal-box {
@@ -241,13 +245,16 @@ a { color: var(--azul-oscuro); }
 
 /* Responsive */
 @media (max-width: 600px) {
-  body {
-    padding: 0;
-    min-height: 100vh;
+  #inicio-modal {
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
   }
   .juego-container {
-    max-width: 98vw;
-    padding: 12px 4px;
+    margin: 12px auto;
+    min-height: unset;
+    padding: 8px 2px;
   }
   .juego-camiseta img {
     width: 70px;
@@ -271,10 +278,5 @@ a { color: var(--azul-oscuro); }
   #empezar-juego {
     font-size: 0.98em;
     padding: 0.4em;
-  }
-  #inicio-modal {
-    align-items: flex-start;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
   }
 }
