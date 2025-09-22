@@ -172,18 +172,32 @@
     .juego-volver:hover {
       color: var(--amarillo);
     }
-    #inicio-modal { background: #3a3959e6 !important; }
+    #inicio-modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #3a3959e6 !important;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+    }
     #modal-box {
       background: var(--gris-fondo) !important;
       color: var(--azul-oscuro) !important;
       border: 2.5px solid var(--azul-oscuro);
       max-width: 420px;
       min-width: 220px;
-      min-height: unset;
       width: 97vw;
       box-sizing: border-box;
       padding: 1.2em 0.7em 1.2em 0.7em;
       margin: 0.2em auto;
+      border-radius: 1.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: unset;
     }
     #modal-box h2 { color: var(--azul-oscuro); }
     .modal-dif-row { border: 2px solid var(--azul-oscuro) !important; background: var(--gris-fondo); color: var(--azul-oscuro); }
@@ -209,7 +223,6 @@
       #modal-box {
         max-width: 99vw;
         min-width: unset;
-        min-height: unset;
         width: 99vw;
         padding: 0.7em 0.2em 0.7em 0.2em;
         font-size: 0.98em;
@@ -225,6 +238,11 @@
       #empezar-juego {
         font-size: 0.98em;
         padding: 0.4em 0.4em;
+      }
+      #inicio-modal {
+        align-items: flex-start;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
       }
     }
   </style>

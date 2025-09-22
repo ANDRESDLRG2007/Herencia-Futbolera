@@ -3,9 +3,9 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 1200;
+  z-index: 9999; /* ¡Muy alto! */
   left: 0; top: 0;
-  width: 100vw; height: 100dvh;
+  width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.6);
   padding: 12px;
   overflow-y: auto;

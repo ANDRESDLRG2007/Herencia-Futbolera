@@ -256,7 +256,7 @@ function mostrarModalInicio() {
   const filas = modal.querySelectorAll('.modal-dif-row');
   filas.forEach((fila, idx) => {
     fila.style.cursor = 'pointer';
-    fila.onclick = () => seleccionarDificultad(idx === 0 ? 'facil' : 'dificil');
+    fila.addEventListener('click', () => seleccionarDificultad(idx === 0 ? 'facil' : 'dificil'));
   });
   btnEmpezar.disabled = true;
   btnEmpezar.style.opacity = 0.6;

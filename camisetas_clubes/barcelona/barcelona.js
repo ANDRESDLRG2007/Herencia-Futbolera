@@ -251,6 +251,7 @@ function mostrarModal(key) {
 
   modal.style.display = 'block';
   modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
 
   // focus para accesibilidad
   const firstFocusable = modal.querySelector('.modal-content');
@@ -261,6 +262,7 @@ function mostrarModal(key) {
 function cerrarModal() {
   modal.style.display = 'none';
   modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
 }
 
 /* cerrar con clic fuera */

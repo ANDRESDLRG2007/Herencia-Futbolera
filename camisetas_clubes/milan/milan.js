@@ -242,11 +242,13 @@ function mostrarModal(key) {
   modal.style.display = 'block';
   modal.setAttribute('aria-hidden', 'false');
   modal.querySelector('.modal-content').focus();
+  document.body.style.overflow = 'hidden';
 }
 
 function cerrarModal() {
   modal.style.display = 'none';
   modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
 }
 window.addEventListener('click', e => { if (e.target === modal) cerrarModal(); });
 window.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
