@@ -11,41 +11,31 @@
 }
 
 html, body {
-  min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: #f2f2f2;
-}
-
-body {
-  color: var(--azul-oscuro);
+  min-height: 100vh;
   font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-/* Centrado vertical solo si NO hay modal */
-body:not(:has(#inicio-modal[style*="display: flex"])) {
+  background: var(--gris-fondo);
+  color: var(--azul-oscuro);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 header {
   background: var(--azul-oscuro);
   color: var(--amarillo);
-  padding: 0.35em 0 0.25em 0;
   text-align: center;
-  letter-spacing: 0.04em;
-  font-size: 1.15em;
+  padding: 0.35em 0;
   font-weight: 800;
+  font-size: 1.15em;
   border-radius: 0 0 0.7em 0.7em;
   box-shadow: 0 2px 12px rgba(34,34,34,0.13);
-  min-height: 0;
-  margin-bottom: 0.2em;
 }
 
 .juego-container {
+  width: 90%;
   max-width: 400px;
-  margin: 32px auto;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 4px 24px rgba(58,57,89,0.2);
@@ -53,20 +43,18 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 60vh;
   animation: popin 0.3s ease forwards;
 }
 
 @keyframes popin {
-  0% { transform: scale(0.95) translateY(30px); opacity: 0; }
-  100% { transform: scale(1) translateY(0); opacity: 1; }
+  from { transform: scale(0.95) translateY(30px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 .juego-container h2 {
-  color: var(--azul-oscuro);
   font-size: 1.25em;
   font-weight: 800;
-  margin: 0.2em 0 0.5em 0;
+  margin: 0.2em 0 0.5em;
   letter-spacing: 0.01em;
   text-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 2px 8px rgba(58,57,89,0.19);
 }
@@ -76,7 +64,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90px;
 }
 
 .juego-camiseta img {
@@ -85,100 +72,86 @@ header {
   object-fit: contain;
   background: var(--gris-fondo);
   border-radius: 0.7em;
-  box-shadow: 0 2px 12px rgba(34,34,34,0.13), 0 1px 4px rgba(58,57,89,0.19);
   border: 2px solid var(--azul-claro);
-  transition: box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(34,34,34,0.13), 0 1px 4px rgba(58,57,89,0.19);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.juego-camiseta img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(58,57,89,0.3);
 }
 
 .juego-inputs {
-  margin: 0.7em 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
   align-items: center;
-  background: #444857;
-  border-radius: 0.7em;
   padding: 1em 0.5em;
 }
 
-.juego-inputs input, .juego-inputs select {
-  font-size: 1.08em;
+.juego-inputs input {
+  width: 100%;
+  max-width: 260px;
+  min-width: 180px;
   padding: 0.5em 1em;
+  font-size: 1em;
   border-radius: 0.5em;
   border: 1.5px solid var(--azul-claro);
-  margin: 0.5em 0;
   background: var(--azul-oscuro);
   color: #fff;
   outline: none;
-  transition: border 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
-  box-shadow: 0 1px 4px rgba(58,57,89,0.13);
-  width: 100%;
-  max-width: 260px;
-  min-width: 180px;
-  word-break: break-word;
-}
-
-.juego-inputs input::placeholder, .juego-inputs select::placeholder {
-  color: #e0e0e0;
-  opacity: 1;
+  transition: 0.2s;
 }
 
 .juego-inputs input:focus {
-  border: 2px solid var(--amarillo);
+  border-color: var(--amarillo);
+  box-shadow: 0 0 8px rgba(242,189,29,0.6);
 }
 
 .juego-btn {
-  background: var(--amarillo);
-  color: var(--negro);
-  font-weight: bold;
-  border: 2px solid var(--azul-oscuro);
-  border-radius: 0.5em;
-  padding: 0.5em 1em;
-  font-size: 1.08em;
-  margin-top: 0.7em;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(34,34,34,0.13), 0 1px 4px rgba(58,57,89,0.19);
   width: 100%;
   max-width: 260px;
   min-width: 180px;
+  padding: 0.5em 1em;
+  font-size: 1.05em;
+  font-weight: bold;
+  border-radius: 0.5em;
+  border: 2px solid var(--azul-oscuro);
+  background: var(--amarillo);
+  color: var(--negro);
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 8px rgba(34,34,34,0.13), 0 1px 4px rgba(58,57,89,0.19);
 }
 
 .juego-btn:hover:not(:disabled) {
   background: var(--azul-claro);
-  color: var(--negro);
   border-color: var(--amarillo);
+  color: var(--negro);
 }
 
 .juego-btn:disabled {
-  background: var(--azul-claro);
-  color: #fff;
-  border-color: var(--azul-claro);
   opacity: 0.6;
   cursor: not-allowed;
 }
 
 .juego-feedback {
-  margin: 0.7em 0 0.3em 0;
+  margin: 0.7em 0 0.3em;
   font-size: 1em;
-  min-height: 1.2em;
-  color: var(--amarillo);
   font-weight: 600;
-  letter-spacing: 0.01em;
+  color: var(--amarillo);
   text-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 1px 4px rgba(58,57,89,0.19);
+  min-height: 1.2em;
 }
 
 .juego-volver {
-  display: inline-block;
   margin-top: 1.2em;
-  color: var(--azul-claro);
   text-decoration: underline;
+  color: var(--azul-claro);
   font-size: 0.95em;
-  font-weight: 500;
-  transition: color 0.2s;
   text-align: center;
-  width: 100%;
 }
 
 .juego-volver:hover {
@@ -195,31 +168,31 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;
-  padding: 0; /* quita padding extra */
 }
 
 #modal-box {
+  width: 90%;
+  max-width: 420px;
   background: var(--gris-fondo);
   color: var(--azul-oscuro);
-  border: 2.5px solid var(--azul-oscuro);
-  max-width: 420px;
-  min-width: 220px;
-  width: 97vw;
+  border: 2px solid var(--azul-oscuro);
   padding: 1.2em 0.7em;
-  margin: 0.2em auto;
   border-radius: 1.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#modal-box h2 { color: var(--azul-oscuro); }
-
 .modal-dif-row {
+  width: 90%;
+  padding: 0.6em;
+  margin: 0.3em 0;
+  text-align: center;
   border: 2px solid var(--azul-oscuro);
+  border-radius: 0.7em;
   background: var(--gris-fondo);
-  color: var(--azul-oscuro);
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .modal-dif-row.selected {
@@ -229,9 +202,16 @@ header {
 }
 
 #empezar-juego {
+  width: 90%;
+  padding: 0.6em;
+  margin-top: 0.5em;
+  font-weight: bold;
+  border-radius: 0.5em;
+  border: 2px solid var(--azul-oscuro);
   background: var(--amarillo);
   color: var(--negro);
-  border: 2px solid var(--azul-oscuro);
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 #empezar-juego:disabled {
@@ -241,42 +221,14 @@ header {
   opacity: 0.6;
 }
 
-a { color: var(--azul-oscuro); }
+a { color: var(--azul-oscuro); text-decoration: none; }
+
+a:hover { color: var(--amarillo); }
 
 /* Responsive */
 @media (max-width: 600px) {
-  #inicio-modal {
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-  }
-  .juego-container {
-    margin: 12px auto;
-    min-height: unset;
-    padding: 8px 2px;
-  }
-  .juego-camiseta img {
-    width: 70px;
-    height: 70px;
-  }
-  #modal-box {
-    max-width: 99vw;
-    min-width: unset;
-    width: 99vw;
-    padding: 0.7em 0.2em;
-    font-size: 0.98em;
-    border-radius: 0.7em;
-  }
-  #modal-box h2 {
-    font-size: 1.1em;
-  }
-  .modal-dif-row {
-    font-size: 0.98em;
-    padding: 0.4em;
-  }
-  #empezar-juego {
-    font-size: 0.98em;
-    padding: 0.4em;
-  }
+  .juego-camiseta img { width: 70px; height: 70px; }
+  .juego-container { padding: 16px 8px; }
+  #modal-box { padding: 0.7em 0.4em; border-radius: 0.8em; }
+  .modal-dif-row, #empezar-juego { font-size: 0.95em; padding: 0.5em; }
 }

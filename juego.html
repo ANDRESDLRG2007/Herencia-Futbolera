@@ -7,35 +7,32 @@
   <link rel="stylesheet" href="/Herencia-Futbolera/style.css">
   <link rel="stylesheet" href="./juego.css">
 </head>
-  <body>
-  <div id="inicio-modal">
-    <div id="modal-box">
-      <a href="/Herencia-Futbolera/index.html" class="modal-volver">volver</a>
-      <h2>juego</h2>
-      <div id="modal-desc">Selecciona una dificultad para ver la descripción.</div>
-      <div class="modal-dif-list">
-        <div class="modal-dif-row">
-          <span>fácil</span>
-          <span id="modal-timer-facil">-</span>
-        </div>
-        <div class="modal-dif-row">
-          <span>difícil</span>
-          <span id="modal-timer-dificil">-</span>
-        </div>
-      </div>
-      <button id="empezar-juego" class="juego-btn">empezar</button>
-    </div>
-  </div>
+<body>
   <div class="juego-container">
     <h2>Minijuego de Camisetas</h2>
-    <div class="juego-camiseta" id="juego-camiseta"></div>
-    <form id="juego-form" autocomplete="off">
+    <div id="juego-camiseta" class="juego-camiseta"></div>
+
+    <!-- Selección de dificultad -->
+    <div id="seleccion-dificultad" class="dificultad-container">
+      <h3>Selecciona dificultad</h3>
+      <div class="modal-dif-list">
+        <div class="modal-dif-row" data-dificultad="facil">Fácil</div>
+        <div class="modal-dif-row" data-dificultad="dificil">Difícil</div>
+      </div>
+    </div>
+
+    <!-- Formulario de respuestas -->
+    <form id="juego-form" autocomplete="off" style="display:none">
       <div class="juego-inputs" id="juego-inputs"></div>
       <button type="submit" class="juego-btn">Comprobar</button>
     </form>
+
     <div class="juego-feedback" id="juego-feedback"></div>
+    <div id="vidas" style="margin:1em 0 0.5em 0;"></div>
+
     <a href="/Herencia-Futbolera/index.html" class="juego-volver">← Volver a clubes</a>
   </div>
   <script src="juego.js"></script>
 </body>
 </html>
+
