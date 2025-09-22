@@ -1,0 +1,280 @@
+:root {
+  --azul-oscuro: #3A3959;
+  --azul-claro: #8596A6;
+  --negro: #222222;
+  --amarillo: #F2BD1D;
+  --gris-fondo: #F2F2F2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+}
+
+body {
+  color: var(--azul-oscuro);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  background: var(--azul-oscuro);
+  color: var(--amarillo);
+  padding: 0.35em 0 0.25em 0;
+  text-align: center;
+  letter-spacing: 0.04em;
+  font-size: 1.15em;
+  font-weight: 800;
+  border-radius: 0 0 0.7em 0.7em;
+  box-shadow: 0 2px 12px rgba(34,34,34,0.13);
+  min-height: 0;
+  margin-bottom: 0.2em;
+}
+
+.juego-container {
+  max-width: 400px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(58,57,89,0.2);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 60vh;
+  animation: popin 0.3s ease forwards;
+}
+
+@keyframes popin {
+  0% { transform: scale(0.95) translateY(30px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.juego-container h2 {
+  color: var(--azul-oscuro);
+  font-size: 1.25em;
+  font-weight: 800;
+  margin: 0.2em 0 0.5em 0;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 2px 8px rgba(58,57,89,0.19);
+}
+
+.juego-camiseta {
+  margin: 0.7em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+}
+
+.juego-camiseta img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background: var(--gris-fondo);
+  border-radius: 0.7em;
+  box-shadow: 0 2px 12px rgba(34,34,34,0.13), 0 1px 4px rgba(58,57,89,0.19);
+  border: 2px solid var(--azul-claro);
+  transition: box-shadow 0.2s;
+}
+
+.juego-inputs {
+  margin: 0.7em 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  background: #444857;
+  border-radius: 0.7em;
+  padding: 1em 0.5em;
+}
+
+.juego-inputs input, .juego-inputs select {
+  font-size: 1.08em;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  border: 1.5px solid var(--azul-claro);
+  margin: 0.5em 0;
+  background: var(--azul-oscuro);
+  color: #fff;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(58,57,89,0.13);
+  width: 100%;
+  max-width: 260px;
+  min-width: 180px;
+  word-break: break-word;
+}
+
+.juego-inputs input::placeholder, .juego-inputs select::placeholder {
+  color: #e0e0e0;
+  opacity: 1;
+}
+
+.juego-inputs input:focus {
+  border: 2px solid var(--amarillo);
+}
+
+.juego-btn {
+  background: var(--amarillo);
+  color: var(--negro);
+  font-weight: bold;
+  border: 2px solid var(--azul-oscuro);
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 1.08em;
+  margin-top: 0.7em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(34,34,34,0.13), 0 1px 4px rgba(58,57,89,0.19);
+  width: 100%;
+  max-width: 260px;
+  min-width: 180px;
+}
+
+.juego-btn:hover:not(:disabled) {
+  background: var(--azul-claro);
+  color: var(--negro);
+  border-color: var(--amarillo);
+}
+
+.juego-btn:disabled {
+  background: var(--azul-claro);
+  color: #fff;
+  border-color: var(--azul-claro);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.juego-feedback {
+  margin: 0.7em 0 0.3em 0;
+  font-size: 1em;
+  min-height: 1.2em;
+  color: var(--amarillo);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 1px 4px rgba(58,57,89,0.19);
+}
+
+.juego-volver {
+  display: inline-block;
+  margin-top: 1.2em;
+  color: var(--azul-claro);
+  text-decoration: underline;
+  font-size: 0.95em;
+  font-weight: 500;
+  transition: color 0.2s;
+  text-align: center;
+  width: 100%;
+}
+
+.juego-volver:hover {
+  color: var(--amarillo);
+}
+
+/* MODAL */
+#inicio-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(58,57,89,0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+#modal-box {
+  background: var(--gris-fondo);
+  color: var(--azul-oscuro);
+  border: 2.5px solid var(--azul-oscuro);
+  max-width: 420px;
+  min-width: 220px;
+  width: 97vw;
+  padding: 1.2em 0.7em;
+  margin: 0.2em auto;
+  border-radius: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#modal-box h2 { color: var(--azul-oscuro); }
+
+.modal-dif-row {
+  border: 2px solid var(--azul-oscuro);
+  background: var(--gris-fondo);
+  color: var(--azul-oscuro);
+}
+
+.modal-dif-row.selected {
+  background: var(--amarillo);
+  color: var(--negro);
+  border-color: var(--amarillo);
+}
+
+#empezar-juego {
+  background: var(--amarillo);
+  color: var(--negro);
+  border: 2px solid var(--azul-oscuro);
+}
+
+#empezar-juego:disabled {
+  background: var(--azul-claro);
+  color: #fff;
+  border-color: var(--azul-claro);
+  opacity: 0.6;
+}
+
+a { color: var(--azul-oscuro); }
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    min-height: 100vh;
+  }
+  .juego-container {
+    max-width: 98vw;
+    padding: 12px 4px;
+  }
+  .juego-camiseta img {
+    width: 70px;
+    height: 70px;
+  }
+  #modal-box {
+    max-width: 99vw;
+    min-width: unset;
+    width: 99vw;
+    padding: 0.7em 0.2em;
+    font-size: 0.98em;
+    border-radius: 0.7em;
+  }
+  #modal-box h2 {
+    font-size: 1.1em;
+  }
+  .modal-dif-row {
+    font-size: 0.98em;
+    padding: 0.4em;
+  }
+  #empezar-juego {
+    font-size: 0.98em;
+    padding: 0.4em;
+  }
+  #inicio-modal {
+    align-items: flex-start;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+}
