@@ -131,13 +131,16 @@
     display: block;
   }
   .modal-info .details {
-    width: 100%;
+    width: 100% !important; /* ✅ fuerza el bloque a ocupar todo el ancho */
     min-width: 0;
     font-size: 1rem;
   }
   .players img {
     width: 38px;
     height: 38px;
+  }
+  .players {
+    justify-content: flex-start; /* jugadores alineados a la izquierda */
   }
 }
 
