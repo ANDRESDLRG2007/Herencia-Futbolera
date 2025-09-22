@@ -3,35 +3,35 @@
 // Datos de camisetas (ejemplo inicial, se puede ampliar)
 const camisetas = [
   // Barcelona
-  { equipo: "Barcelona", temporada: "2006", img: "/camisetas_clubes/barcelona/camisetas_barca/2006.jpg" },
-  { equipo: "Barcelona", temporada: "2010", img: "/camisetas_clubes/barcelona/camisetas_barca/2010.jpg" },
-  { equipo: "Barcelona", temporada: "2015", img: "/camisetas_clubes/barcelona/camisetas_barca/2015.jpg" },
-  { equipo: "Barcelona", temporada: "2021", img: "/camisetas_clubes/barcelona/camisetas_barca/2021.jpg" },
+  { equipo: "Barcelona", temporada: "2006", img: "/Herencia-Futbolera/camisetas_clubes/barcelona/camisetas_barca/2006.jpg" },
+  { equipo: "Barcelona", temporada: "2010", img: "/Herencia-Futbolera/camisetas_clubes/barcelona/camisetas_barca/2010.jpg" },
+  { equipo: "Barcelona", temporada: "2015", img: "/Herencia-Futbolera/camisetas_clubes/barcelona/camisetas_barca/2015.jpg" },
+  { equipo: "Barcelona", temporada: "2021", img: "/Herencia-Futbolera/camisetas_clubes/barcelona/camisetas_barca/2021.jpg" },
   // Real Madrid
-  { equipo: "Real Madrid", temporada: "2009", img: "/camisetas_clubes/real_madrid/camisetas_rm/2009.jpg" },
-  { equipo: "Real Madrid", temporada: "2017", img: "/camisetas_clubes/real_madrid/camisetas_rm/2017.jpg" },
-  { equipo: "Real Madrid", temporada: "2014", img: "/camisetas_clubes/real_madrid/camisetas_rm/2014.jpg" },
-  { equipo: "Real Madrid", temporada: "2021", img: "/camisetas_clubes/real_madrid/camisetas_rm/2021.jpg" },
+  { equipo: "Real Madrid", temporada: "2009", img: "/Herencia-Futbolera/camisetas_clubes/real_madrid/camisetas_rm/2009.jpg" },
+  { equipo: "Real Madrid", temporada: "2017", img: "/Herencia-Futbolera/camisetas_clubes/real_madrid/camisetas_rm/2017.jpg" },
+  { equipo: "Real Madrid", temporada: "2014", img: "/Herencia-Futbolera/camisetas_clubes/real_madrid/camisetas_rm/2014.jpg" },
+  { equipo: "Real Madrid", temporada: "2021", img: "/Herencia-Futbolera/camisetas_clubes/real_madrid/camisetas_rm/2021.jpg" },
   // Boca Juniors
-  { equipo: "Boca Juniors", temporada: "1997", img: "/camisetas_clubes/boca/camisetas_boca/1997.jpg" },
-  { equipo: "Boca Juniors", temporada: "2003", img: "/camisetas_clubes/boca/camisetas_boca/2003.jpg" },
-  { equipo: "Boca Juniors", temporada: "2014", img: "/camisetas_clubes/boca/camisetas_boca/2014.jpg" },
-  { equipo: "Boca Juniors", temporada: "2020", img: "/camisetas_clubes/boca/camisetas_boca/2020.jpg" },
+  { equipo: "Boca Juniors", temporada: "1997", img: "/Herencia-Futbolera/camisetas_clubes/boca/camisetas_boca/1997.jpg" },
+  { equipo: "Boca Juniors", temporada: "2003", img: "/Herencia-Futbolera/camisetas_clubes/boca/camisetas_boca/2003.jpg" },
+  { equipo: "Boca Juniors", temporada: "2014", img: "/Herencia-Futbolera/camisetas_clubes/boca/camisetas_boca/2014.jpg" },
+  { equipo: "Boca Juniors", temporada: "2020", img: "/Herencia-Futbolera/camisetas_clubes/boca/camisetas_boca/2020.jpg" },
   // River Plate
-  { equipo: "River Plate", temporada: "2001", img: "/camisetas_clubes/river/camisetas_river/2001.jpg" },
-  { equipo: "River Plate", temporada: "2008", img: "/camisetas_clubes/river/camisetas_river/2008.jpg" },
-  { equipo: "River Plate", temporada: "2014", img: "/camisetas_clubes/river/camisetas_river/2014.jpg" },
-  { equipo: "River Plate", temporada: "2018", img: "/camisetas_clubes/river/camisetas_river/2018.jpg" },
+  { equipo: "River Plate", temporada: "2001", img: "/Herencia-Futbolera/camisetas_clubes/river/camisetas_river/2001.jpg" },
+  { equipo: "River Plate", temporada: "2008", img: "/Herencia-Futbolera/camisetas_clubes/river/camisetas_river/2008.jpg" },
+  { equipo: "River Plate", temporada: "2014", img: "/Herencia-Futbolera/camisetas_clubes/river/camisetas_river/2014.jpg" },
+  { equipo: "River Plate", temporada: "2018", img: "/Herencia-Futbolera/camisetas_clubes/river/camisetas_river/2018.jpg" },
   // Milan
-  { equipo: "AC Milan", temporada: "2006", img: "/camisetas_clubes/milan/camisetas_milan/2006.jpg" },
-  { equipo: "AC Milan", temporada: "2009", img: "/camisetas_clubes/milan/camisetas_milan/2009.jpg" },
-  { equipo: "AC Milan", temporada: "2011", img: "/camisetas_clubes/milan/camisetas_milan/2011.jpg" },
-  { equipo: "AC Milan", temporada: "2015", img: "/camisetas_clubes/milan/camisetas_milan/2015.jpg" },
+  { equipo: "AC Milan", temporada: "2006", img: "/Herencia-Futbolera/camisetas_clubes/milan/camisetas_milan/2006.jpg" },
+  { equipo: "AC Milan", temporada: "2009", img: "/Herencia-Futbolera/camisetas_clubes/milan/camisetas_milan/2009.jpg" },
+  { equipo: "AC Milan", temporada: "2011", img: "/Herencia-Futbolera/camisetas_clubes/milan/camisetas_milan/2011.jpg" },
+  { equipo: "AC Milan", temporada: "2015", img: "/Herencia-Futbolera/camisetas_clubes/milan/camisetas_milan/2015.jpg" },
   // Millonarios (ejemplo)
-  { equipo: "Millonarios", temporada: "2007", img: "/camisetas_clubes/millonarios/camisetas_millos/2007.jpg" },
-  { equipo: "Millonarios", temporada: "2010", img: "/camisetas_clubes/millonarios/camisetas_millos/2010.jpg" },
-  { equipo: "Millonarios", temporada: "2014", img: "/camisetas_clubes/millonarios/camisetas_millos/2014.jpg" },
-  { equipo: "Millonarios", temporada: "2017", img: "/camisetas_clubes/millonarios/camisetas_millos/2017.jpg" }
+  { equipo: "Millonarios", temporada: "2007", img: "/Herencia-Futbolera/camisetas_clubes/millonarios/camisetas_millos/2007.jpg" },
+  { equipo: "Millonarios", temporada: "2010", img: "/Herencia-Futbolera/camisetas_clubes/millonarios/camisetas_millos/2010.jpg" },
+  { equipo: "Millonarios", temporada: "2014", img: "/Herencia-Futbolera/camisetas_clubes/millonarios/camisetas_millos/2014.jpg" },
+  { equipo: "Millonarios", temporada: "2017", img: "/Herencia-Futbolera/camisetas_clubes/millonarios/camisetas_millos/2017.jpg" }
 ];
 
 
