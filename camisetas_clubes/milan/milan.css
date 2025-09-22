@@ -46,19 +46,20 @@ body.realmadrid {
   gap: 36px;
   align-items: center;
   justify-content: center;
-  padding: 24px 40px 0 40px;
-  min-width: 420px;
+  padding: 40px 40px 0 40px; /* Aumenta el padding-top para que los puntos queden sobre la línea */
+  min-width: 320px;
 }
 .timeline-bar .timeline-inner::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 32px;
+  top: 50%; /* Centra la línea verticalmente respecto a los puntos */
   height: 4px;
-  background: #141917;
+  background: #141917; /* Color institucional Milan */
   z-index: 1;
   border-radius: 2px;
+  transform: translateY(-50%);
 }
 .timeline-bar .timeline-item {
   position: relative;
@@ -72,15 +73,16 @@ body.realmadrid {
   min-width: 64px;
 }
 .timeline-bar .dot {
+  position: relative;
+  z-index: 2;
+  background: #E21F39;
+  border: 2px solid #590212;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #E21F39;
-  border: 2px solid #590212;
+  margin-bottom: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.16);
   transition: transform .15s ease, background .15s;
-  position: relative;
-  z-index: 2;
 }
 .timeline-bar .label {
   font-size: 0.85rem;
@@ -93,8 +95,19 @@ body.realmadrid {
   background: #E21F39;
 }
 @media (max-width: 680px) {
-  .timeline-bar .timeline-inner { padding: 8px; gap: 22px; }
-  .timeline-bar .label { font-size: 0.8rem; }
+  .timeline-bar .timeline-inner {
+    padding: 28px 4vw 0 4vw;
+    gap: 14vw;
+    min-width: 0;
+  }
+  .timeline-bar .timeline-inner::before {
+    height: 3px;
+  }
+  .timeline-bar .dot {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 6px;
+  }
 }
 .timeline {
   max-width: 920px;

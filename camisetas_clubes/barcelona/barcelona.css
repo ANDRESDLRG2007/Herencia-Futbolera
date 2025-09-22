@@ -53,8 +53,8 @@ body.barcelona {
   gap: 36px;
   align-items: center;
   justify-content: center;
-  padding: 24px 40px 0 40px;
-  min-width: 420px;
+  padding: 40px 40px 0 40px; /* Aumenta el padding-top para que los puntos queden sobre la línea */
+  min-width: 320px;
 }
 
 /* linea horizontal central (dentro del contenedor) */
@@ -63,12 +63,12 @@ body.barcelona {
   position: absolute;
   left: 0;
   right: 0;
-  top: 32px; /* justo debajo del centro de los puntos */
+  top: 50%; /* Centra la línea verticalmente respecto a los puntos */
   height: 4px;
-  background: #3A3959; /* color barra */
+  background: #3A3959; /* Color institucional Barcelona */
   z-index: 1;
   border-radius: 2px;
-  transform: none;
+  transform: translateY(-50%);
 }
 
 /* cada item del timeline */
@@ -111,10 +111,34 @@ body.barcelona {
   background: #A50044;
 }
 
+/* Asegura que los puntos estén sobre la línea */
+.timeline-bar .timeline-point {
+  position: relative;
+  z-index: 2;
+  background: #F2BD1D;
+  border: 3px solid #3A3959;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px #0001;
+}
+
 /* --- timeline: responsive - scroll horiz si hay muchos años --- */
 @media (max-width: 680px) {
-  .timeline-bar .timeline-inner { padding: 8px; gap: 22px; }
-  .timeline-bar .label { font-size: 0.8rem; }
+  .timeline-bar .timeline-inner {
+    padding: 28px 4vw 0 4vw;
+    gap: 14vw;
+    min-width: 0;
+  }
+  .timeline-bar .timeline-inner::before {
+    height: 3px;
+  }
+  .timeline-bar .timeline-point {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 6px;
+  }
 }
 
 /* --- Main timeline content (secciones por año) --- */

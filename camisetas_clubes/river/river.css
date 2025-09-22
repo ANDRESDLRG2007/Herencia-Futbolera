@@ -46,19 +46,20 @@ body.realmadrid {
   gap: 36px;
   align-items: center;
   justify-content: center;
-  padding: 24px 40px 0 40px;
-  min-width: 420px;
+  padding: 40px 40px 0 40px; /* Aumenta el padding-top para que los puntos queden sobre la línea */
+  min-width: 320px;
 }
 .timeline-bar .timeline-inner::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  top: 32px;
+  top: 50%; /* Centra la línea verticalmente respecto a los puntos */
   height: 4px;
-  background: #0D0D0D;
+  background: #0D0D0D; /* Color institucional River */
   z-index: 1;
   border-radius: 2px;
+  transform: translateY(-50%);
 }
 .timeline-bar .timeline-item {
   position: relative;
@@ -92,9 +93,16 @@ body.realmadrid {
   transform: scale(1.25);
   background: #A60D36;
 }
+/* Responsive: menos padding y gap en móvil */
 @media (max-width: 680px) {
-  .timeline-bar .timeline-inner { padding: 8px; gap: 22px; }
-  .timeline-bar .label { font-size: 0.8rem; }
+  .timeline-bar .timeline-inner {
+    padding: 28px 4vw 0 4vw;
+    gap: 14vw;
+    min-width: 0;
+  }
+  .timeline-bar .timeline-inner::before {
+    height: 3px;
+  }
 }
 .timeline {
   max-width: 920px;
