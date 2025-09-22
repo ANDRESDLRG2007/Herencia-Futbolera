@@ -15,10 +15,10 @@ function checkBloqueo(dif) {
 
 // Función para actualizar timers
 function actualizarTimersModal() {
-  ['facil','dificil'].forEach(dif => {
+  ['facil', 'dificil'].forEach(dif => {
     const timerSpan = document.getElementById('modal-timer-' + dif);
     if (!timerSpan) return;
-    
+
     const key = 'juego-camisetas-' + dif;
     const data = localStorage.getItem(key);
     if (!data) {
@@ -27,24 +27,24 @@ function actualizarTimersModal() {
       return;
     }
     const { fecha } = JSON.parse(data);
-    const hoy = new Date().toISOString().slice(0,10);
-    if(fecha !== hoy){
+    const hoy = new Date().toISOString().slice(0, 10);
+    if (fecha !== hoy) {
       timerSpan.textContent = 'Disponible';
       timerSpan.style.color = '#2a7c2a';
     } else {
-      function update(){
+      function update() {
         const ahora = new Date();
         const manana = new Date();
-        manana.setHours(24,0,0,0);
+        manana.setHours(24, 0, 0, 0);
         const diff = manana - ahora;
-        const h = Math.floor(diff/1000/60/60);
-        const m = Math.floor((diff/1000/60)%60);
-        const s = Math.floor((diff/1000)%60);
+        const h = Math.floor(diff / 1000 / 60 / 60);
+        const m = Math.floor((diff / 1000 / 60) % 60);
+        const s = Math.floor((diff / 1000) % 60);
         if (timerSpan) {
           timerSpan.textContent = `${h}h ${m}m`;
           timerSpan.style.color = '#b00';
         }
-        if(diff > 0 && document.getElementById('modal-timer-' + dif)) {
+        if (diff > 0 && document.getElementById('modal-timer-' + dif)) {
           setTimeout(update, 60000); // Actualizar cada minuto
         }
       }
@@ -70,11 +70,11 @@ function agregarDescripcion() {
     border: 2px solid var(--azul-claro);
   `;
   descripcionDiv.innerHTML = 'Selecciona una dificultad para ver la descripción del modo de juego.';
-  
+
   // Insertar después de la lista de dificultades
   const lista = container.querySelector('.modal-dif-list');
   container.insertBefore(descripcionDiv, lista.nextSibling);
-  
+
   // Agregar div de disponibilidad
   const disponibilidadDiv = document.createElement('div');
   disponibilidadDiv.id = 'disponibilidad-info';
@@ -93,15 +93,15 @@ filas.forEach(fila => {
   fila.style.cursor = 'pointer';
   fila.addEventListener('click', () => {
     dificultadSeleccionada = fila.dataset.dif;
-    
+
     // Actualizar selección visual
     filas.forEach(f => f.classList.remove('selected'));
     fila.classList.add('selected');
-    
+
     // Actualizar descripción
     const descripcion = document.getElementById('descripcion-dificultad');
     const disponibilidad = document.getElementById('disponibilidad-info');
-    
+
     if (dificultadSeleccionada === 'facil') {
       descripcion.innerHTML = `
         <strong>Modo Fácil:</strong><br>
@@ -119,11 +119,11 @@ filas.forEach(fila => {
         • Cada día puedes intentarlo una vez
       `;
     }
-    
+
     // Verificar disponibilidad
     const yaJugado = checkBloqueo(dificultadSeleccionada);
     btnEmpezar.disabled = yaJugado;
-    
+
     if (yaJugado) {
       btnEmpezar.textContent = 'Ya jugaste hoy';
       btnEmpezar.style.opacity = '0.6';
@@ -142,7 +142,7 @@ filas.forEach(fila => {
 btnEmpezar.addEventListener('click', () => {
   if (!dificultadSeleccionada) return;
   if (checkBloqueo(dificultadSeleccionada)) return;
-  
+
   // Guardamos la dificultad seleccionada en localStorage para el juego
   localStorage.setItem('dificultad-juego', dificultadSeleccionada);
   window.location.href = 'juego.html';
@@ -152,7 +152,7 @@ btnEmpezar.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   agregarDescripcion();
   actualizarTimersModal();
-  
+
   // Actualizar timers cada minuto
   setInterval(actualizarTimersModal, 60000);
 });
