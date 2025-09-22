@@ -13,16 +13,19 @@
       --amarillo: #F2BD1D;
       --gris-fondo: #F2F2F2;
     }
+    html, body {
+      min-height: 100dvh;
+      height: 100dvh;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+    }
     body {
-      background: var(--gris-fondo);
       color: var(--azul-oscuro);
       font-family: 'Segoe UI', Arial, sans-serif;
-      min-height: 100vh;
-      margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100dvh;
     }
     header {
       background: var(--azul-oscuro);
@@ -38,22 +41,16 @@
       margin-bottom: 0.2em;
     }
     .juego-container {
-      max-width: 370px;
-      width: 96vw;
-      margin: 0 auto;
+      max-width: 400px;
+      margin: 32px auto;
       background: #fff;
-      border-radius: 1.2em;
-      box-shadow: 0 6px 32px #3A395950, 0 1.5px 8px #2222;
-      padding: 1.2em 1.1em 1.1em 1.1em;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px #3A395933;
+      padding: 24px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 2.5px solid var(--azul-oscuro);
-      position: relative;
-      min-height: unset;
-      transition: box-shadow 0.2s;
-      gap: 0.2em;
-      animation: popin 0.5s cubic-bezier(.6,-0.28,.74,.05);
+      min-height: 60vh;
     }
     @keyframes popin {
       0% { transform: scale(0.95) translateY(30px); opacity: 0; }
@@ -202,9 +199,8 @@
         min-height: 100dvh;
       }
       .juego-container {
-        max-width: 99vw;
-        padding: 0.5em 0.1em 0.5em 0.1em;
-        border-radius: 0.7em;
+        max-width: 98vw;
+        padding: 12px 4px;
       }
       .juego-camiseta img {
         width: 70px;

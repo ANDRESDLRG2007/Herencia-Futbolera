@@ -5,25 +5,27 @@
   position: fixed;
   z-index: 1200;
   left: 0; top: 0;
-  width: 100%; height: 100%;
+  width: 100vw; height: 100dvh;
   background: rgba(0,0,0,0.6);
-  padding: 20px;
+  padding: 12px;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 /* Contenido */
 .modal-content {
   background: #fff;
   margin: 6% auto;
-  width: 94%;
+  width: 96vw;
   max-width: 720px;
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-  padding: 18px;
+  padding: 18px 18px 22px 18px;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  box-sizing: border-box;
 }
 
 /* Botón cerrar */
@@ -36,40 +38,45 @@
   border: none;
   color: #333;
   cursor: pointer;
+  z-index: 2;
 }
 
 /* Contenedor de la ficha: en desktop imagen + detalles lado a lado */
 .modal-info {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 /* estructura interna responsive */
 .modal-info .top {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* imagen grande de camiseta */
 .modal-info img.jersey-large {
   width: 45%;
-  max-width: 260px;
+  max-width: 220px;
+  min-width: 120px;
   height: auto;
   border-radius: 8px;
   object-fit: contain;
   background: #f7f7f7;
   padding: 6px;
   border: 1px solid #e6e6e6;
+  box-sizing: border-box;
 }
 
 /* detalles a la derecha de la imagen (desktop) */
 .modal-info .details {
   width: 55%;
-  font-size: 14px;
+  font-size: 15px;
   color: #222;
-  line-height: 1.4;
+  line-height: 1.5;
+  min-width: 140px;
 }
 
 .modal-info .details p { margin: 6px 0; }
@@ -102,10 +109,45 @@
   color: #333;
 }
 
-/* mobile: apila todo */
+/* mobile: apila todo y ajusta paddings */
 @media (max-width: 720px) {
-  .modal-content { padding: 14px; margin: 12% auto; }
-  .modal-info .top { flex-direction: column; }
-  .modal-info img.jersey-large { width: 100%; max-width: none; }
-  .modal-info .details { width: 100%; }
+  .modal-content {
+    padding: 10px 4vw 18px 4vw;
+    margin: 10% auto;
+    width: 98vw;
+    max-width: 99vw;
+    min-width: 0;
+  }
+  .modal-info .top {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .modal-info img.jersey-large {
+    width: 100%;
+    max-width: 320px;
+    min-width: 0;
+    margin: 0 auto;
+    display: block;
+  }
+  .modal-info .details {
+    width: 100%;
+    min-width: 0;
+    font-size: 1rem;
+  }
+  .players img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Extra pequeño */
+@media (max-width: 420px) {
+  .modal-content {
+    padding: 6px 2vw 12px 2vw;
+    margin: 12% auto;
+  }
+  .modal-info img.jersey-large {
+    max-width: 98vw;
+  }
 }
