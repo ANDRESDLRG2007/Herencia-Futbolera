@@ -239,14 +239,11 @@ function mostrarModal(key) {
           <p><strong>Patrocinador:</strong> ${info.sponsor}</p>
           <p><strong>Competiciones:</strong> ${info.competitions}</p>
           <div class="palmares"><strong>Palmarés:</strong> ${info.trophies}</div>
-        </div>
-      </div>
-
-      <div>
-        <p style="margin:10px 0;"><strong>Breve historia:</strong> ${info.description}</p>
-        <div>
-          <p style="margin:6px 0;"><strong>Jugadores icónicos:</strong></p>
-          <div class="players">${playersHTML || '<span style="color:#666">Sin jugadores añadidos</span>'}</div>
+          <p style="margin:10px 0;"><strong>Breve historia:</strong> ${info.description}</p>
+          <div>
+            <p style="margin:6px 0;"><strong>Jugadores icónicos:</strong></p>
+            <div class="players">${playersHTML || '<span style="color:#666">Sin jugadores añadidos</span>'}</div>
+          </div>
         </div>
       </div>
     </div>
