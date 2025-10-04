@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Agregar evento click
     img.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevenir comportamiento por defecto
+      e.preventDefault();
       
       // Obtener el nombre del jugador del atributo alt
       let nombreJugador = this.alt;
@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // Si no hay alt, intentar extraer del nombre del archivo
       if (!nombreJugador || nombreJugador === '') {
         const src = this.src;
-        const nombreArchivo = src.split('/').pop(); // Obtiene "ronaldinho 2006.jpg"
-        nombreJugador = nombreArchivo.split('.')[0]; // Obtiene "ronaldinho 2006"
-        nombreJugador = nombreJugador.split(' ')[0]; // Obtiene "ronaldinho"
+        const nombreArchivo = src.split('/').pop();
+        nombreJugador = nombreArchivo.split('.')[0];
+        nombreJugador = nombreJugador.split(' ')[0];
       }
       
       // Limpiar el nombre (eliminar años, espacios extra, etc)
@@ -42,13 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Detectar si está en Android WebView
       const isAndroidWebView = /wv/.test(navigator.userAgent) || 
-                               (typeof Android !== 'undefined');
+                               /Android/.test(navigator.userAgent);
       
       if (isAndroidWebView) {
-        // En Android WebView, intentar abrir en navegador externo
-        // Usar el formato correcto de Intent
-        const intentUrl = `intent://es.wikipedia.org/wiki/${encodeURIComponent(nombreJugador)}#Intent;scheme=https;end;`;
-        window.location.href = intentUrl;
+        // En Android WebView, simplemente navegar a la URL
+        // El MainActivity interceptará la navegación y abrirá el navegador externo
+        window.location.href = urlWikipedia;
       } else {
         // En navegador normal, abrir en nueva pestaña
         window.open(urlWikipedia, '_blank');
@@ -57,22 +56,29 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Versión alternativa si quieres más control sobre qué imágenes son clickeables
-// Puedes agregar una clase específica a las imágenes de jugadores
-
+// Función alternativa si quieres más control sobre qué imágenes son clickeables
 function hacerImagenClickeable(selector) {
   const imagenes = document.querySelectorAll(selector);
   
   imagenes.forEach(img => {
     img.style.cursor = 'pointer';
-    img.title = 'Click para ver en Wikipedia'; // Tooltip
+    img.title = 'Click para ver en Wikipedia';
     
-    img.addEventListener('click', function() {
+    img.addEventListener('click', function(e) {
+      e.preventDefault();
       const nombreJugador = this.alt || this.dataset.jugador;
       
       if (nombreJugador) {
         const urlWikipedia = `https://es.wikipedia.org/wiki/${encodeURIComponent(nombreJugador)}`;
-        window.open(urlWikipedia, '_blank');
+        
+        const isAndroidWebView = /wv/.test(navigator.userAgent) || 
+                                 /Android/.test(navigator.userAgent);
+        
+        if (isAndroidWebView) {
+          window.location.href = urlWikipedia;
+        } else {
+          window.open(urlWikipedia, '_blank');
+        }
       }
     });
   });
