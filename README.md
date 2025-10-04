@@ -103,7 +103,7 @@ CSS cambia dependiendo del club al que se dirija
 
 ## 📄 Licencia
 
-Este proyecto es de código abierto y está disponible bajo la [MIT License](./License).
+Este proyecto es de código abierto y está disponible bajo la [MIT License](https://github.com/ANDRESDLRG2007/Herencia-Futbolera/blob/main/License.txt).
 
 ## 🙏 Agradecimientos
 
