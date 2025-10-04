@@ -145,9 +145,10 @@ btnEmpezar.addEventListener('click', () => {
   if (!dificultadSeleccionada) return;
   if (checkBloqueo(dificultadSeleccionada)) return;
 
-  // Redirigir con query string en lugar de guardar en localStorage
-  window.location.href = `./juego.html?dif=${dificultadSeleccionada}`;
+  // URL absoluta — IMPORTANTE para que Android WebView no falle
+  window.location.href = `https://andresdlrg2007.github.io/Herencia-Futbolera/juego.html?dif=${dificultadSeleccionada}`;
 });
+
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {

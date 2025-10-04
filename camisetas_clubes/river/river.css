@@ -186,7 +186,7 @@ body.riverplate {
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
-.riverplate footer {
+footer {
   text-align: center;
   background-color: #0A0A0A; /* Color oscuro de River Plate */
   color: #D50032; /* Rojo de River Plate */
