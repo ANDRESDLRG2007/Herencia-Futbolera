@@ -103,7 +103,7 @@ CSS cambia dependiendo del club al que se dirija
 
 ## 📄 Licencia
 
-Este proyecto es de código abierto y está disponible bajo la [MIT License](LICENSE).
+Este proyecto es de código abierto y está disponible bajo la [MIT License](./License).
 
 ## 🙏 Agradecimientos
 
