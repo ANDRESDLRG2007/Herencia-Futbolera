@@ -46,8 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (isAndroidWebView) {
         // En Android WebView, intentar abrir en navegador externo
-        // Opción 1: Usar intent de Android
-        window.location.href = `intent://${urlWikipedia.replace('https://', '')}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
+        // Usar el formato correcto de Intent
+        const intentUrl = `intent://es.wikipedia.org/wiki/${encodeURIComponent(nombreJugador)}#Intent;scheme=https;end;`;
+        window.location.href = intentUrl;
       } else {
         // En navegador normal, abrir en nueva pestaña
         window.open(urlWikipedia, '_blank');
