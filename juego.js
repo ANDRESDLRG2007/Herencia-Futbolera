@@ -399,14 +399,25 @@ function iniciarJuego() {
 
 // --- Inicializar ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Verificar si viene de la página de inicio con dificultad seleccionada
-    const dificultadGuardada = localStorage.getItem('dificultad-juego');
-    if (dificultadGuardada) {
-        dificultad = dificultadGuardada;
-        localStorage.removeItem('dificultad-juego'); // Limpiar después de usar
+    // Intentar obtener dificultad desde parámetros de URL (método preferido)
+    const params = new URLSearchParams(window.location.search);
+    const dificultadURL = params.get('dif');
+    
+    if (dificultadURL && (dificultadURL === 'facil' || dificultadURL === 'dificil')) {
+        dificultad = dificultadURL;
+        console.log("Dificultad recibida por URL:", dificultad);
         iniciarJuego();
     } else {
-        // Si no hay dificultad seleccionada, mostrar modal de selección
-        mostrarSeleccionDificultad();
+        // Fallback: verificar localStorage (para compatibilidad)
+        const dificultadGuardada = localStorage.getItem('dificultad-juego');
+        if (dificultadGuardada) {
+            dificultad = dificultadGuardada;
+            localStorage.removeItem('dificultad-juego');
+            console.log("Dificultad recibida por localStorage:", dificultad);
+            iniciarJuego();
+        } else {
+            // Si no hay dificultad seleccionada, mostrar modal de selección
+            mostrarSeleccionDificultad();
+        }
     }
 });

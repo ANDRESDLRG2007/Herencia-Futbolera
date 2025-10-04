@@ -145,9 +145,8 @@ btnEmpezar.addEventListener('click', () => {
   if (!dificultadSeleccionada) return;
   if (checkBloqueo(dificultadSeleccionada)) return;
 
-  // Guardamos la dificultad seleccionada en localStorage para el juego
-  localStorage.setItem('dificultad-juego', dificultadSeleccionada);
-  window.location.href = "./juego.html";
+  // Redirigir con query string en lugar de guardar en localStorage
+  window.location.href = `./juego.html?dif=${dificultadSeleccionada}`;
 });
 
 // Inicialización
