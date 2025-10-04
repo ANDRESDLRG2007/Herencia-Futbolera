@@ -24,7 +24,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 10px;
+  padding: 40px 10px 20px 10px;
+  /* Más padding arriba para WebView */
 }
 
 header {
@@ -252,10 +253,23 @@ header {
 @media screen and (max-height: 600px) {
   body {
     align-items: flex-start;
-    padding-top: 20px;
+    padding-top: 40px;
   }
   
   .juego-container, .inicio-container {
-    margin-top: 0;
+    margin-top: 20px;
+  }
+}
+
+/* Ajuste específico para móviles */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 50px 10px 20px 10px;
+    min-height: 100vh;
+  }
+  
+  .juego-container, .inicio-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 }
