@@ -162,7 +162,7 @@ body.riverplate {
 .jersey-item img {
   width: 200px;
   height: 250px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   cursor: pointer;
   border: 3px solid #3E424E;

@@ -147,7 +147,7 @@ btnEmpezar.addEventListener('click', () => {
 
   // Guardamos la dificultad seleccionada en localStorage para el juego
   localStorage.setItem('dificultad-juego', dificultadSeleccionada);
-  window.location.href = '/Herencia-Futbolera/juego.html';
+  window.location.href = "./juego.html";
 });
 
 // Inicialización
