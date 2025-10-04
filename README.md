@@ -73,15 +73,6 @@ La aplicación utiliza **localStorage** del navegador para:
 - Controlar el sistema de bloqueo de 24 horas
 - No requiere conexión a internet después de la primera carga
 
-## 🔧 Características Técnicas
-
-- **WebView optimizado** para Android
-- **Detección automática de WebView** para comportamientos específicos
-- **Intent handling** para abrir enlaces externos en navegador nativo
-- **Responsive design** adaptado a diferentes tamaños de pantalla
-- **Animaciones CSS** para transiciones suaves
-- **Sistema de query strings** para comunicación entre páginas
-
 ## 🎨 Paleta de Colores
 Pricipal para la app
 ```css
