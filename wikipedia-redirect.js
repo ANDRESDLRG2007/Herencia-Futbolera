@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Agregar evento click
-    img.addEventListener('click', function() {
+    img.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevenir comportamiento por defecto
+      
       // Obtener el nombre del jugador del atributo alt
       let nombreJugador = this.alt;
       
@@ -38,8 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
       // Construir URL de Wikipedia en español
       const urlWikipedia = `https://es.wikipedia.org/wiki/${encodeURIComponent(nombreJugador)}`;
       
-      // Abrir en nueva pestaña
-      window.open(urlWikipedia, '_blank');
+      // Detectar si está en Android WebView
+      const isAndroidWebView = /wv/.test(navigator.userAgent) || 
+                               (typeof Android !== 'undefined');
+      
+      if (isAndroidWebView) {
+        // En Android WebView, intentar abrir en navegador externo
+        // Opción 1: Usar intent de Android
+        window.location.href = `intent://${urlWikipedia.replace('https://', '')}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
+      } else {
+        // En navegador normal, abrir en nueva pestaña
+        window.open(urlWikipedia, '_blank');
+      }
     });
   });
 });
