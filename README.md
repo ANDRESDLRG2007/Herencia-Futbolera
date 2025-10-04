@@ -109,6 +109,11 @@ Este proyecto es de código abierto y está disponible bajo la [MIT License](LIC
 
 - Wikipedia por las biografías de jugadores
 
+## ⚠️ Aviso Legal
+“Herencia Futbolera” es un proyecto educativo y sin fines de lucro.
+Los logotipos, camisetas y demás elementos visuales de los clubes son utilizados únicamente con fines informativos e históricos.
+Todos los derechos y marcas registradas pertenecen a sus respectivos propietarios.
+
 
 
 ---
