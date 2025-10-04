@@ -1,0 +1,71 @@
+// wikipedia-redirect.js
+// Script general para redirigir imágenes de jugadores a Wikipedia
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Seleccionar todas las imágenes que estén en la carpeta de jugadores
+  const imagenes = document.querySelectorAll('img[src*="/jugadores/"]');
+  
+  imagenes.forEach(img => {
+    // Hacer que la imagen sea clickeable
+    img.style.cursor = 'pointer';
+    
+    // Agregar efecto hover
+    img.addEventListener('mouseenter', function() {
+      this.style.opacity = '0.7';
+      this.style.transition = 'opacity 0.3s ease';
+    });
+    
+    img.addEventListener('mouseleave', function() {
+      this.style.opacity = '1';
+    });
+    
+    // Agregar evento click
+    img.addEventListener('click', function() {
+      // Obtener el nombre del jugador del atributo alt
+      let nombreJugador = this.alt;
+      
+      // Si no hay alt, intentar extraer del nombre del archivo
+      if (!nombreJugador || nombreJugador === '') {
+        const src = this.src;
+        const nombreArchivo = src.split('/').pop(); // Obtiene "ronaldinho 2006.jpg"
+        nombreJugador = nombreArchivo.split('.')[0]; // Obtiene "ronaldinho 2006"
+        nombreJugador = nombreJugador.split(' ')[0]; // Obtiene "ronaldinho"
+      }
+      
+      // Limpiar el nombre (eliminar años, espacios extra, etc)
+      nombreJugador = nombreJugador.trim();
+      
+      // Construir URL de Wikipedia en español
+      const urlWikipedia = `https://es.wikipedia.org/wiki/${encodeURIComponent(nombreJugador)}`;
+      
+      // Abrir en nueva pestaña
+      window.open(urlWikipedia, '_blank');
+    });
+  });
+});
+
+// Versión alternativa si quieres más control sobre qué imágenes son clickeables
+// Puedes agregar una clase específica a las imágenes de jugadores
+
+function hacerImagenClickeable(selector) {
+  const imagenes = document.querySelectorAll(selector);
+  
+  imagenes.forEach(img => {
+    img.style.cursor = 'pointer';
+    img.title = 'Click para ver en Wikipedia'; // Tooltip
+    
+    img.addEventListener('click', function() {
+      const nombreJugador = this.alt || this.dataset.jugador;
+      
+      if (nombreJugador) {
+        const urlWikipedia = `https://es.wikipedia.org/wiki/${encodeURIComponent(nombreJugador)}`;
+        window.open(urlWikipedia, '_blank');
+      }
+    });
+  });
+}
+
+// Ejemplos de uso de la función alternativa:
+// hacerImagenClickeable('img[src*="/jugadores/"]');
+// hacerImagenClickeable('.jugador-img');
+// hacerImagenClickeable('[data-wikipedia]');
